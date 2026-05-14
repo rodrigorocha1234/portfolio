@@ -1,7 +1,7 @@
-- course: Pós-Graduação em Engenharia de Dados
-  institution: Universidade Anhanguera
-  website: https://www.anhanguera.com
+- course: Análise e Desenvolvimento de Sistemas- Superior Tecnológico
+  institution: Faculdade de Tecnologia de Ribeirão Preto - FATEC
+  website: http://www.fatecrp.edu.br/
   logo: /assets/img/logo_fatec.png
-  year: 2025
-  description: Especialização em pipelines de dados, processamento distribuído e arquiteturas em nuvem.
+  year: 2016 - 2020
+  description: ""
   dark_fix: true
