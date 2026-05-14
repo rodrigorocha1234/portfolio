@@ -71,7 +71,10 @@ A solução segue o padrão **Medallion Architecture**:
 ---
 
 ## Clique aqui para ver o projeto
-{% include youtube.html id="QTD4S0gMr5U" %}
+{% include youtube.html 
+   id="QTD4S0gMr5U" 
+   title="Arquitetura de Data Lake na AWS - Explicação completa" 
+%}
 ---
 ## Conclusão
 
