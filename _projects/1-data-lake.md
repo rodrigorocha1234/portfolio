@@ -70,6 +70,9 @@ A solução segue o padrão **Medallion Architecture**:
 
 ---
 
+## Clique aqui para ver o projeto
+{% include youtube.html id="QTD4S0gMr5U" %}
+---
 ## Conclusão
 
 O projeto demonstra como uma arquitetura bem estruturada em cloud pode transformar dados brutos em ativos analíticos de alto valor.
