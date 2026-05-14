@@ -1,0 +1,19 @@
+- role: Desenvolvedor Backend
+  company: empresa_a
+  period: 2023 — Atual
+  description: >
+    Desenvolvimento de APIs escaláveis, automação de processos e integração de sistemas distribuídos.
+  tech:
+    - Python
+    - Docker
+    - RabbitMQ
+
+- role: Analista de Sistemas
+  company: empresa_b
+  period: 2021 — 2023
+  description: >
+    Atuação em modelagem de dados, suporte a integrações e análise de sistemas corporativos.
+  tech:
+    - SQL
+    - Linux
+    - APIs

@@ -1,0 +1,61 @@
+<section class="py-28 px-6 bg-gradient-to-b from-[#081424] via-[#0b1f3a] to-[#081424] relative overflow-hidden">
+
+  <!-- glow decorativo -->
+  <div class="absolute inset-0 opacity-20 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[140px] rounded-full"></div>
+  </div>
+
+  <div class="max-w-5xl mx-auto relative">
+
+    <h2 class="text-4xl font-bold text-white text-center mb-16 tracking-tight">
+      Experiência Profissional
+    </h2>
+
+    <div class="relative border-l border-sky-500/20 pl-8 space-y-12">
+
+      {% for exp in site.data.experience %}
+
+      <!-- dot da timeline -->
+      <div class="absolute -left-[9px] mt-2 w-4 h-4 rounded-full bg-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.6)]"></div>
+
+      <div class="experience-card-premium group">
+
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+
+          <h3 class="text-white font-semibold text-xl">
+            {{ exp.role }} · 
+            <a href="{{ site.data.companies[exp.company].url }}"
+               target="_blank"
+               class="text-sky-300 hover:text-cyan-300 transition-colors">
+
+              {{ site.data.companies[exp.company].name }}
+
+            </a>
+          </h3>
+
+          <span class="text-sky-300 text-sm font-medium">
+            {{ exp.period }}
+          </span>
+
+        </div>
+
+        <p class="text-slate-300 mt-3 leading-relaxed">
+          {{ exp.description }}
+        </p>
+
+        <div class="flex flex-wrap gap-2 mt-4">
+
+          {% for tech in exp.tech %}
+            <span class="project-tag-premium">{{ tech }}</span>
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
