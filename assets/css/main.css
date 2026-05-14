@@ -516,6 +516,27 @@ nav:hover {
   transform: translateX(4px);
 }
 
+.edu-logo {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* caso o logo seja escuro (como Fatec) */
+.edu-logo.dark-fix {
+  padding: 8px;
+}
+
+.edu-logo.dark-fix img {
+  width: 80px;
+  height: 80px;
+}
+
+
 @media (max-width: 1280px) {
   .skills-grid {
     grid-template-columns: repeat(4, 1fr);

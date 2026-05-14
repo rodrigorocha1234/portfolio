@@ -31,11 +31,13 @@
               <div class="mt-2 flex items-center gap-3">
 
                 {% if item.logo %}
-                <img
-                  src="{{ item.logo }}"
-                  alt="{{ item.institution }} logo"
-                  class="w-10 h-10 object-contain rounded-md bg-white p-1"
-                />
+                <div class="edu-logo {% if item.dark_fix %}dark-fix{% endif %}">
+                  <img
+                    src="{{ item.logo }}"
+                    alt="{{ item.institution }} logo"
+                    class="w-10 h-10 object-contain"
+                  />
+                </div>
                 {% endif %}
 
                 <a href="{{ item.website }}"

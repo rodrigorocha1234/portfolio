@@ -4,3 +4,4 @@
   logo: /assets/img/logo_fatec.png
   year: 2025
   description: Especialização em pipelines de dados, processamento distribuído e arquiteturas em nuvem.
+  dark_fix: true
