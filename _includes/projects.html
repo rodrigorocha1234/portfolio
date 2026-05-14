@@ -13,7 +13,7 @@
       {% for project in latest_projects %}
 
       <a href="{{ project.url }}"
-         class="block bg-[#122b50] rounded-2xl overflow-hidden hover:scale-[1.02] transition">
+         class="project-card group relative block bg-[#122b50] rounded-2xl overflow-hidden transition">
 
         <img src="{{ project.image }}" class="h-48 w-full object-cover">
 
@@ -37,7 +37,7 @@
             {{ project.description }}
           </p>
 
-          <!-- TAGS (ESTILIZADAS) -->
+          <!-- TAGS -->
           <div class="flex flex-wrap gap-2 mt-4">
 
             {% for tag in project.tags %}
@@ -48,6 +48,12 @@
               </span>
             {% endfor %}
 
+          </div>
+
+          <!-- AFFORDANCE (CLIQUE) -->
+          <div class="project-hint">
+            <span>Ler projeto completo</span>
+            <span class="project-arrow">→</span>
           </div>
 
         </div>

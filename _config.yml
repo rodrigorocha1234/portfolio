@@ -4,7 +4,7 @@ markdown: kramdown
 hero:
   greeting: "Olá, eu sou"
   name: "Rodrigo Silva Rocha"
-  subtitle: "Engenheiro de Dados — pipelines, arquitetura e analytics"
+  subtitle: "Engenheiro de Dados —  construindo pipelines robustos e arquiteturas de dados escaláveis"
   cta_text: "Ver Projetos"
   cta_link: "#projects"
   background: "/assets/img/header.jpeg"

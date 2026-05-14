@@ -27,49 +27,53 @@ permalink: /projects/
 
     </div>
 
-    <!-- TAG FILTERS -->
-    <!-- <div class="flex flex-wrap justify-center gap-2 mb-12">
-
-      {% assign all_tags = site.projects | map: "tags" | join: "," | split: "," | uniq %}
-
-      {% for tag in all_tags %}
-        <button class="filter-tag" data-tag="{{ tag | strip }}">
-          {{ tag | strip }}
-        </button>
-      {% endfor %}
-
-    </div> -->
-
-
-
-
     <!-- GRID -->
     <div id="projectsGrid" class="grid md:grid-cols-3 gap-8">
 
-      {% for project in site.projects %}
+      {% assign projects_sorted = site.projects | sort: "date" | reverse %}
+
+      {% for project in projects_sorted %}
       <a href="{{ project.url }}"
          class="project-card block bg-[#122b50] rounded-2xl overflow-hidden transition"
          data-tags="{{ project.tags | join: ',' }}"
          data-title="{{ project.title | downcase }}">
 
-        <img src="{{ project.image }}" class="h-48 w-full object-cover">
+        <img
+          src="{{ project.image }}"
+          alt="{{ project.title }}"
+          class="h-48 w-full object-cover">
 
         <div class="p-6">
-          <h3 class="text-white font-bold text-lg">
+
+          <!-- Título -->
+          <h3 class="text-white font-bold text-lg flex items-center gap-2">
             {{ project.title }}
+
+            {% if forloop.first %}
+              <span class="text-[10px] px-2 py-[2px] rounded-full bg-cyan-400 text-[#0a1628] font-bold">
+                Novo
+              </span>
+            {% endif %}
           </h3>
 
+          <!-- Descrição -->
           <p class="text-gray-400 text-sm mt-2">
             {{ project.description }}
           </p>
 
+          <!-- Tags -->
           <div class="flex flex-wrap gap-2 mt-4">
             {% for tag in project.tags %}
-              <span class="project-tag">{{ tag }}</span>
+              <span
+                class="inline-flex items-center px-3 py-1 text-[11px] font-semibold rounded-full
+                       text-cyan-300 bg-cyan-400/10 border border-cyan-400/25
+                       hover:bg-cyan-400/20 transition">
+                {{ tag }}
+              </span>
             {% endfor %}
           </div>
-        </div>
 
+        </div>
       </a>
       {% endfor %}
 
