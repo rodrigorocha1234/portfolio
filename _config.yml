@@ -1,10 +1,80 @@
 title: Portfólio Engenharia de Dados
 markdown: kramdown
 
+hero:
+  greeting: "Olá, eu sou"
+  name: "Rodrigo Silva Rocha"
+  subtitle: "Engenheiro de Dados — pipelines, arquitetura e analytics"
+  cta_text: "Ver Projetos"
+  cta_link: "#projects"
+  background: "/assets/img/header.jpeg"
+
 collections:
   projects:
     output: true
     permalink: /projects/:name/
+
+
+skills:
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Apache Spark
+    icon: https://cdn.simpleicons.org/apachespark/E25A1C
+
+  - name: PostgreSQL
+    icon: https://cdn.simpleicons.org/postgresql/67e8f9
+
+  - name: Airflow
+    icon: https://cdn.simpleicons.org/apacheairflow/67e8f9
+
+  - name: Kafka
+    icon: https://cdn.simpleicons.org/apachekafka/67e8f9
+
+  - name: dbt
+    icon: https://cdn.simpleicons.org/dbt/FF694B
+
+  - name: AWS
+    icon: https://cdn.simpleicons.org/amazonaws/FF9900
+
+  - name: GCP
+    icon: https://cdn.simpleicons.org/googlecloud/67e8f9
+
+
+
+contacts:
+  email: silva.rodrigo31@gmail.com
+  github: https://github.com/rodrigorocha1234
+  linkedin: https://www.linkedin.com/in/rodrigo-rocha-dados/
+
+
 
 exclude:
   - Gemfile

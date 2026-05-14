@@ -1,8 +1,8 @@
 <header class="relative min-h-[70vh] flex items-center justify-center text-center px-6 overflow-hidden">
 
   <!-- Background image -->
-  <div class="absolute inset-0 bg-cover bg-center scale-10"
-       style="background-image: url('{{ "/assets/img/header.jpeg" | relative_url }}');">
+  <div class="absolute inset-0 bg-cover bg-center scale-105"
+       style="background-image: url('{{ site.hero.background | relative_url }}');">
   </div>
 
   <!-- Overlay gradiente -->
@@ -15,20 +15,22 @@
   <div class="relative max-w-2xl text-white">
 
     <p class="uppercase tracking-[0.3em] text-cyan-300 text-xs animate-fade-in">
-      Olá, eu sou
+      {{ site.hero.greeting }}
     </p>
 
     <h1 class="text-4xl md:text-6xl font-bold mt-3 leading-tight animate-fade-in-up">
-      Rodrigo Silva Rocha
+      {{ site.hero.name }}
     </h1>
 
     <p class="text-gray-300 mt-4 text-sm md:text-lg animate-fade-in-up delay-100">
-      Engenheiro de Dados — pipelines, arquitetura e analytics
+      {{ site.hero.subtitle }}
     </p>
 
-    <a href="#projects"
+    <a href="{{ site.hero.cta_link }}"
        class="mt-8 inline-block bg-cyan-400 text-black px-6 py-3 rounded-full font-semibold text-sm hover:scale-105 hover:bg-cyan-300 transition transform duration-200 animate-fade-in-up delay-200">
-      Ver Projetos
+
+      {{ site.hero.cta_text }}
+
     </a>
 
   </div>

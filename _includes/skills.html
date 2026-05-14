@@ -1,73 +1,20 @@
 <section id="skills" class="py-28 px-6 text-center bg-gradient-to-b from-[#070f1c] via-[#0a1a33] to-[#070f1c] relative overflow-hidden">
+
   <h2 class="text-3xl font-bold mb-10 text-white tracking-wide">
     Skills
   </h2>
 
   <div class="skills-grid max-w-6xl mx-auto px-4">
 
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/python/67e8f9" class="skill-icon"> Python
-    </span>
+    {% for skill in site.skills %}
 
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/apachespark/E25A1C" class="skill-icon"> Apache Spark
-    </span>
+      <span class="skill-badge">
+        <img src="{{ skill.icon }}" class="skill-icon">
+        {{ skill.name }}
+      </span>
 
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/postgresql/67e8f9" class="skill-icon">PostgreSQL
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/apacheairflow/67e8f9" class="skill-icon"> Airflow
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/apachekafka/67e8f9" class="skill-icon"> Kafka
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/dbt/FF694B" class="skill-icon"> dbt
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/amazonaws/FF9900" class="skill-icon"> AWS
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/googlecloud/67e8f9" class="skill-icon"> GCP
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/docker/2496ED" class="skill-icon"> Docker
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/kubernetes/326CE5" class="skill-icon"> Kubernetes
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/googlebigquery/67e8f9" class="skill-icon"> BigQuery
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/snowflake/29B5E8" class="skill-icon"> Snowflake
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/postgresql/67e8f9" class="skill-icon"> PostgreSQL
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/redis/DC382D" class="skill-icon"> Redis
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/linux/FCC624" class="skill-icon"> Linux
-    </span>
-
-    <span class="skill-badge">
-      <img src="https://cdn.simpleicons.org/git/F05032" class="skill-icon"> Git
-    </span>
+    {% endfor %}
 
   </div>
+
 </section>
