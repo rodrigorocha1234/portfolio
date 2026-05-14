@@ -26,12 +26,14 @@ function filterProjects() {
   projects.forEach(project => {
     const tags = project.dataset.tags.split(",").map(t => t.trim());
 
+    // sem filtro → mostra tudo
     if (activeTags.size === 0) {
       project.style.display = "block";
       return;
     }
 
-    const match = [...activeTags].every(tag => tags.includes(tag));
+    // OR logic: basta 1 match
+    const match = [...activeTags].some(tag => tags.includes(tag));
 
     project.style.display = match ? "block" : "none";
   });

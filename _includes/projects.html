@@ -13,8 +13,10 @@
 
         <!-- IMAGE -->
         <div class="overflow-hidden">
-          <img src="{{ project.image }}"
-               class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <img
+            src="{{ project.image }}"
+            alt="{{ project.title }}"
+            class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110">
         </div>
 
         <!-- CONTENT -->
@@ -43,5 +45,6 @@
       {% endfor %}
 
     </div>
+
   </div>
 </section>
