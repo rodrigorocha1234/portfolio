@@ -1,0 +1,126 @@
+body {
+  font-family: Ubuntu, sans-serif;
+}
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+  justify-items: center;
+}
+
+.skill-badge {
+  width: 100%;
+  max-width: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 10px;
+  border-radius: 9999px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px);
+  background: rgba(34, 211, 238, 0.18);
+  border-color: rgba(34, 211, 238, 0.5);
+}
+
+
+.keyword-badge {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 10px;
+  border-radius: 9999px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.keyword-badge:hover {
+  background: rgba(34, 211, 238, 0.18);
+  border-color: rgba(34, 211, 238, 0.5);
+  transform: translateY(-1px);
+}
+
+
+.project-tag {
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 4px 10px;
+  border-radius: 9999px;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.project-tag:hover {
+  background: rgba(34, 211, 238, 0.18);
+  border-color: rgba(34, 211, 238, 0.5);
+  transform: translateY(-1px);
+}
+
+
+.filter-tag {
+  padding: 6px 12px;
+  border-radius: 9999px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tag:hover {
+  background: rgba(34, 211, 238, 0.15);
+}
+
+.filter-tag.active {
+  background: #22d3ee;
+  color: #0a1628;
+  border-color: #22d3ee;
+}
+
+
+
+@media (max-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
