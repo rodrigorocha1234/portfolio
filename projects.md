@@ -34,7 +34,7 @@ permalink: /projects/
 
       {% for project in projects_sorted %}
       <a href="{{ project.url }}"
-         class="project-card block bg-[#122b50] rounded-2xl overflow-hidden transition"
+         class="project-card group relative block bg-[#122b50] rounded-2xl overflow-hidden transition"
          data-tags="{{ project.tags | join: ',' }}"
          data-title="{{ project.title | downcase }}">
 
@@ -45,7 +45,7 @@ permalink: /projects/
 
         <div class="p-6">
 
-          <!-- Título -->
+          <!-- TÍTULO -->
           <h3 class="text-white font-bold text-lg flex items-center gap-2">
             {{ project.title }}
 
@@ -56,12 +56,12 @@ permalink: /projects/
             {% endif %}
           </h3>
 
-          <!-- Descrição -->
+          <!-- DESCRIÇÃO -->
           <p class="text-gray-400 text-sm mt-2">
             {{ project.description }}
           </p>
 
-          <!-- Tags -->
+          <!-- TAGS -->
           <div class="flex flex-wrap gap-2 mt-4">
             {% for tag in project.tags %}
               <span
@@ -71,6 +71,12 @@ permalink: /projects/
                 {{ tag }}
               </span>
             {% endfor %}
+          </div>
+
+          <!-- AFFORDANCE CLIQUE -->
+          <div class="project-hint">
+            <span>Ler projeto completo</span>
+            <span class="project-arrow">→</span>
           </div>
 
         </div>
