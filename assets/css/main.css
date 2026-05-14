@@ -87,7 +87,7 @@ body {
 
 
 .filter-tag {
-  padding: 6px 12px;
+  padding: 6px 10px;
   border-radius: 9999px;
   font-size: 12px;
   font-weight: 600;
@@ -96,6 +96,7 @@ body {
   border: 1px solid rgba(34, 211, 238, 0.25);
   cursor: pointer;
   transition: 0.2s;
+  white-space: nowrap;
 }
 
 .filter-tag:hover {
@@ -196,3 +197,4 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
