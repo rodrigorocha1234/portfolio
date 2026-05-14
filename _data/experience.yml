@@ -1,29 +1,28 @@
-- role: Desenvolvedor Backend
-  company: empresa_a
-  period: 2023 — Atual
+- role: Analista de Desenvolvimento de Sistemas Pleno
+  company: blp_it
+  period: 2020 — Atual
   description: >
-    Desenvolvimento de APIs escaláveis, automação de processos e integração de sistemas distribuídos.
+    - Implementação de processos automatizados para coletar dados de diversas fontes, incluindo APIs (REST e SOAP) e integração com ERPs (Sankhya, Alterdata, Senior, Cigam, Totvs) e forças de vendas (Mercos, Máxima Tech).
+    - Criação e manutenção de pipelines de ETL utilizando Pentaho Data Integration, garantindo a transformação e o carregamento eficiente de dados.
+    - Consultas e manipulação de dados em bancos de dados  para suporte e validação de informações
   tech:
     - Python
     - Docker
     - RabbitMQ
 
-- role: Analista de Sistemas
-  company: empresa_b
-  period: 2021 — 2023
-  description: >
-    Atuação em modelagem de dados, suporte a integrações e análise de sistemas corporativos.
-  tech:
-    - SQL
-    - Linux
-    - APIs
 
-- role: Analista de Sistemas
-  company: empresa_c
-  period: 2021 — 2023
+
+- role: Estágio
+  company: blp_it
+  period: 2019 — 2020
   description: >
-    Atuação em modelagem de dados, suporte a integrações e análise de sistemas corporativos.
+    - Desenvolvimento de integrações com Pentaho Data Integration  e consumo de API (REST e SOAP).
+    - Consulta simples em banco de dados.
+    - Integração com ERPs Sankhya, Alterdata, Senior e forças de vendas Mercos, Máxima Tech.
+    
   tech:
-    - SQL
-    - Linux
-    - APIs
+    - Python
+    - Docker
+    - RabbitMQ
+
+

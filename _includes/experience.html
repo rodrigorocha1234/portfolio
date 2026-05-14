@@ -39,9 +39,21 @@
 
         </div>
 
-        <p class="text-slate-300 mt-3 leading-relaxed">
-          {{ exp.description }}
-        </p>
+        <!-- DESCRIÇÃO COMO LISTA -->
+        <ul class="text-slate-300 mt-3 leading-relaxed space-y-2 list-disc pl-5">
+
+          {% assign clean_description = exp.description | replace: "- ", "\n- " %}
+          {% assign lines = clean_description | split: "\n" %}
+
+          {% for line in lines %}
+            {% assign item = line | strip %}
+
+            {% if item != "" %}
+              <li>{{ item | remove_first: "- " }}</li>
+            {% endif %}
+          {% endfor %}
+
+        </ul>
 
         <div class="flex flex-wrap gap-2 mt-4">
 
