@@ -17,3 +17,13 @@
     - SQL
     - Linux
     - APIs
+
+- role: Analista de Sistemas
+  company: empresa_c
+  period: 2021 — 2023
+  description: >
+    Atuação em modelagem de dados, suporte a integrações e análise de sistemas corporativos.
+  tech:
+    - SQL
+    - Linux
+    - APIs

@@ -5,3 +5,7 @@ empresa_a:
 empresa_b:
   name: DataCorp
   url: https://datacorp.com
+
+empresa_c:
+  name: DataCorp
+  url: https://datacorp.com
