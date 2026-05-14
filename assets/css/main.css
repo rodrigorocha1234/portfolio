@@ -89,16 +89,13 @@ body {
 .filter-tag {
   padding: 6px 12px;
   border-radius: 9999px;
-
   font-size: 12px;
   font-weight: 600;
-
   color: #67e8f9;
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.25);
-
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
 
 .filter-tag:hover {
@@ -111,88 +108,82 @@ body {
   border-color: #22d3ee;
 }
 
-.project-content {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 120px 24px 80px;
-
+.prose-custom {
   color: #cbd5e1;
+  font-size: 16.5px;
   line-height: 1.75;
+  letter-spacing: 0.2px;
 }
 
 /* HEADINGS */
-.project-content h1 {
-  font-size: 34px;
+.prose-custom h1 {
+  font-size: 28px;
   font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 10px;
+  color: white;
+  margin: 32px 0 16px;
 }
 
-.project-content h2 {
+.prose-custom h2 {
   font-size: 22px;
   font-weight: 700;
-  color: #67e8f9;
-  margin-top: 40px;
-  margin-bottom: 12px;
+  color: white;
+  margin: 28px 0 12px;
+  border-left: 3px solid #22d3ee;
+  padding-left: 10px;
 }
 
-.project-content h3 {
+.prose-custom h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #ffffff;
-  margin-top: 24px;
+  color: #e2e8f0;
+  margin: 20px 0 10px;
 }
 
 /* PARAGRAPHS */
-.project-content p {
-  font-size: 15.5px;
+.prose-custom p {
+  margin: 14px 0;
   color: #cbd5e1;
-  margin-bottom: 14px;
 }
 
 /* LISTS */
-.project-content ul {
+.prose-custom ul {
+  margin: 14px 0;
   padding-left: 18px;
-  margin: 12px 0;
 }
 
-.project-content li {
-  margin-bottom: 6px;
+.prose-custom ul li {
+  margin: 6px 0;
+  list-style: disc;
   color: #cbd5e1;
 }
 
-/* IMAGE */
-.project-content img {
-  width: 100%;
-  border-radius: 16px;
-  margin: 20px 0;
-  border: 1px solid rgba(34, 211, 238, 0.15);
-}
-
-/* BADGE STYLE (tags no front matter se quiser depois) */
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 12px 0 30px;
-}
-
-.project-meta span {
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 9999px;
-
-  color: #67e8f9;
+/* CODE BLOCKS */
+.prose-custom code {
   background: rgba(34, 211, 238, 0.08);
-  border: 1px solid rgba(34, 211, 238, 0.25);
+  color: #67e8f9;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 14px;
 }
 
-/* SECTION SPACING */
-.project-content hr {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  margin: 40px 0;
+.prose-custom pre {
+  background: #0d1f3c;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  margin: 18px 0;
 }
+
+/* BLOCKQUOTE */
+.prose-custom blockquote {
+  border-left: 3px solid #22d3ee;
+  padding-left: 14px;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 18px 0;
+}
+
 
 @media (max-width: 1280px) {
   .skills-grid {
