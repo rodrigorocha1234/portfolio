@@ -15,44 +15,57 @@ collections:
     permalink: /projects/:name/
 
 
-            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
 skills:
   - name: Python
-    icon: https://devicon-website.vercel.app/api/python/plain.svg?color=%2367E8F9
+    icon: https://cdn.simpleicons.org/python/67e8f9
   
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+  
+  - name: Python
+    icon: https://cdn.simpleicons.org/python/67e8f9
+
+  - name: Apache Spark
+    icon: https://cdn.simpleicons.org/apachespark/E25A1C
+
+  - name: PostgreSQL
+    icon: https://cdn.simpleicons.org/postgresql/67e8f9
+
   - name: Airflow
     icon: https://cdn.simpleicons.org/apacheairflow/67e8f9
-
-  - name: PDI
-    icon: /assets/devicons/pdi.png
-
-  - name: MySQL
-    icon: https://devicon-website.vercel.app/api/mysql/plain.svg?color=%2367E8F9
-  
-  - name: Sql Server
-    icon: https://devicon-website.vercel.app/api/microsoftsqlserver/plain.svg?color=%2367E8F9
-
-  - name: Oracle
-    icon: https://devicon-website.vercel.app/api/oracle/original.svg?color=%2367E8F9
-  
-  - name: MongoDb
-    icon: https://devicon-website.vercel.app/api/mongodb/plain.svg?color=%2367E8F9
-
-  - name: Redis
-    icon: https://devicon-website.vercel.app/api/redis/plain.svg?color=%2367E8F9
-
-  - name: Docker
-    icon: https://cdn.simpleicons.org/docker/67e8f9
 
   - name: Kafka
     icon: https://cdn.simpleicons.org/apachekafka/67e8f9
 
   - name: dbt
-    icon: /assets/devicons/dbt.png
+    icon: https://cdn.simpleicons.org/dbt/FF694B
 
+  - name: AWS
+    icon: https://cdn.simpleicons.org/amazonaws/FF9900
 
-
+  - name: GCP
+    icon: https://cdn.simpleicons.org/googlecloud/67e8f9
 
 
 
