@@ -3,7 +3,7 @@ layout: project
 title: Data Lake na AWS
 image: https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg
 description: Arquitetura de data lake escalável na AWS.
-tags: [AWS, Spark, Data Lake, ETL]
+tags: [AWS, Spark, Data Lake, ETL, teste de Site, chave_2, chave3, chave4, chave5, chave6]
 ---
 
 # Data Lake na AWS
