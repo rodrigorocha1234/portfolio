@@ -14,8 +14,6 @@ collections:
     output: true
     permalink: /projects/:name/
 
-
-            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
           
 skills:
   - name: Python
@@ -50,6 +48,9 @@ skills:
 
   - name: dbt
     icon: /assets/devicons/dbt.png
+
+
+
 
 
 
