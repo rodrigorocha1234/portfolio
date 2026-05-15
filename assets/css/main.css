@@ -37,6 +37,11 @@ body {
   background: rgba(34, 211, 238, 0.18);
   border-color: rgba(34, 211, 238, 0.5);
 }
+.project-card img {
+  height: 210px; /* ajuste aqui */
+  width: 100%;
+  object-fit: cover;
+}
 
 
 .keyword-badge {

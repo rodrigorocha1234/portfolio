@@ -7,6 +7,7 @@ permalink: /projects/
 <section class="py-24 px-6 bg-[#0a1628] min-h-screen">
   <div class="max-w-6xl mx-auto">
 
+    <!-- TITLE -->
     <h1 class="text-3xl font-bold text-white text-center mb-8">
       Projetos
     </h1>
@@ -27,7 +28,7 @@ permalink: /projects/
 
     </div>
 
-    <!-- GRID -->
+    <!-- PROJECTS GRID -->
     <div id="projectsGrid" class="grid md:grid-cols-3 gap-8">
 
       {% assign projects_sorted = site.projects | sort: "date" | reverse %}
@@ -38,14 +39,15 @@ permalink: /projects/
          data-tags="{{ project.tags | join: ',' }}"
          data-title="{{ project.title | downcase }}">
 
+        <!-- IMAGE (AJUSTADA) -->
         <img
           src="{{ project.image }}"
           alt="{{ project.title }}"
-          class="h-48 w-full object-cover">
+          class="h-36 w-full object-cover rounded-t-2xl">
 
         <div class="p-6">
 
-          <!-- TÍTULO -->
+          <!-- TITLE -->
           <h3 class="text-white font-bold text-lg flex items-center gap-2">
             {{ project.title }}
 
@@ -56,7 +58,7 @@ permalink: /projects/
             {% endif %}
           </h3>
 
-          <!-- DESCRIÇÃO -->
+          <!-- DESCRIPTION -->
           <p class="text-gray-400 text-sm mt-2">
             {{ project.description }}
           </p>
@@ -73,7 +75,7 @@ permalink: /projects/
             {% endfor %}
           </div>
 
-          <!-- AFFORDANCE CLIQUE -->
+          <!-- HINT -->
           <div class="project-hint">
             <span>Ler projeto completo</span>
             <span class="project-arrow">→</span>
@@ -84,5 +86,6 @@ permalink: /projects/
       {% endfor %}
 
     </div>
+
   </div>
 </section>
