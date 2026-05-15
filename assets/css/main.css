@@ -448,76 +448,277 @@ skills
 }
 
 
+/* ==========================================================
+   NAVBAR PREMIUM
+   ========================================================== */
+
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+
+  /* Glassmorphism */
+  background: rgba(10, 22, 40, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Borda e sombra */
+  border-bottom: 1px solid rgba(34, 211, 238, 0.08);
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.28),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+
+  /* Transições suaves */
   transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
 
+/* Faixa luminosa superior */
+nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(34, 211, 238, 0.05) 25%,
+      rgba(34, 211, 238, 0.10) 50%,
+      rgba(34, 211, 238, 0.05) 75%,
+      transparent 100%
+    );
+
+  opacity: 0.9;
+}
+
+/* Hover geral */
 nav:hover {
-  background: rgba(10, 22, 40, 0.92);
-  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  background: rgba(10, 22, 40, 0.88);
+  border-bottom-color: rgba(34, 211, 238, 0.18);
+
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.40),
+    0 0 35px rgba(34, 211, 238, 0.06);
 }
 
-/* Links */
-nav a {
+/* Container interno */
+nav .max-w-6xl {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+nav a[href="/"] {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #67e8f9;
+
+  text-shadow:
+    0 0 12px rgba(34, 211, 238, 0.25);
+
   transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+    color 0.25s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
-nav a:hover {
+nav a[href="/"]:hover {
+  color: #a5f3fc;
+  transform: translateY(-1px);
+
+  text-shadow:
+    0 0 18px rgba(34, 211, 238, 0.45),
+    0 0 28px rgba(34, 211, 238, 0.15);
+}
+
+/* ==========================================================
+   SAUDAÇÃO
+   ========================================================== */
+
+#greeting {
+  color: rgba(103, 232, 249, 0.90);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.18);
+}
+
+/* ==========================================================
+   LINKS DE NAVEGAÇÃO
+   ========================================================== */
+
+nav .md\:flex a {
+  position: relative;
+
+  color: #cbd5e1;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  padding: 8px 0;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Hover */
+nav .md\:flex a:hover {
   color: #67e8f9;
   transform: translateY(-1px);
 }
 
-/* Ajuste extra para telas muito pequenas */
-@media (max-width: 480px) {
-  nav .max-w-6xl {
-    padding-left: 12px;
-    padding-right: 12px;
+/* Linha animada */
+nav .md\:flex a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 9999px;
+
+  background: linear-gradient(
+    90deg,
+    #22d3ee,
+    #67e8f9,
+    #7dd3fc
+  );
+
+  box-shadow:
+    0 0 12px rgba(34, 211, 238, 0.35);
+
+  transition: width 0.28s ease;
+}
+
+nav .md\:flex a:hover::after {
+  width: 100%;
+}
+
+/* ==========================================================
+   BOTÕES MOBILE
+   ========================================================== */
+
+.md\:hidden a {
+  border-radius: 9999px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.md\:hidden a:hover {
+  transform: translateY(-2px);
+
+  background: rgba(34, 211, 238, 0.16);
+  border-color: rgba(34, 211, 238, 0.45);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.20),
+    0 0 18px rgba(34, 211, 238, 0.08);
+}
+
+/* ==========================================================
+   ESTADO DE FOCO (Acessibilidade)
+   ========================================================== */
+
+nav a:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+
+@media (max-width: 768px) {
+  nav {
+    background: rgba(10, 22, 40, 0.84);
   }
 
-  nav a {
-    font-size: 11px;
+  #greeting {
+    display: none;
   }
 }
+
+@media (max-width: 480px) {
+  nav {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* ==========================================================
+   PROJECT CARDS (SEM ANIMAÇÃO DE SCROLL)
+   ========================================================== */
 
 .project-card {
   border: 1px solid rgba(56, 189, 248, 0.10);
-  transition: all 0.25s ease;
-  opacity: 0;
-  transform: translateY(24px) scale(0.98);
-  filter: blur(10px);
+  background: rgba(15, 30, 60, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
 
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease,
-    filter 0.7s ease;
-  will-change: opacity, transform, filter;
-}
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 
-
-.project-card.reveal {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
+  transform: none;
+  filter: none;
 }
 
-/* hover principal */
+/* Hover com destaque visual */
 .project-card:hover {
   transform: translateY(-6px) scale(1.02);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-  background: rgba(18, 43, 80, 0.55);
+
+  /* Borda mais intensa */
+  border-color: rgba(103, 232, 249, 0.45);
+
+  /* Fundo mais iluminado */
+  background: rgba(18, 43, 80, 0.65);
+
+  /* Glow + sombra */
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(103, 232, 249, 0.18),
+    0 0 35px rgba(34, 211, 238, 0.12);
 }
 
-/* hint de clique */
+/* Opcional: brilho interno sutil */
+.project-card:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background: linear-gradient(
+    135deg,
+    rgba(103, 232, 249, 0.05),
+    transparent 40%,
+    transparent 60%,
+    rgba(125, 211, 252, 0.04)
+  );
+}
+
+/* Hint de clique */
 .project-hint {
   margin-top: 16px;
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -531,12 +732,12 @@ nav a:hover {
   transition: all 0.25s ease;
 }
 
-/* seta animada */
+/* Seta animada */
 .project-arrow {
   transition: transform 0.2s ease;
 }
 
-/* hover states */
+/* Hover states */
 .project-card:hover .project-hint {
   opacity: 1;
   color: rgba(103, 232, 249, 0.95);
