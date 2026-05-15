@@ -1,4 +1,3 @@
-
 ---
 layout: project
 title: Sistema de Emissão de Alertas em Tempo Real da Região de Ribeirão Preto
@@ -7,6 +6,9 @@ image: /assets/img/posts/monitoramento_clima/thumb.png
 description: O projeto propõe uma arquitetura em tempo real para a região de Ribeirão Preto, utilizando uma API e exibindo os dados em um dashboard.
 tags: ['python', 'apache_kafka', 'streamlit']
 ---
+
+
+
 
 
 # Projeto: Sistema de Emissão de Alertas em Tempo Real da Região de Ribeirão Preto
@@ -52,15 +54,13 @@ O projeto propõe uma arquitetura em tempo real para a região de Ribeirão Pret
 
 
 
-<div style="text-align:center;"> 
-  <iframe width="800" height="600" 
-    src="https://www.youtube.com/watch?v=SdjyYmXV8i8" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
+{% include youtube.html 
+   id="SdjyYmXV8i8" 
+   title="Sistema de Emissão de Alertas em Tempo Real da Região de Ribeirão Preto" 
+%}
+
+
+
 
 
 [Link do reposítório](https://github.com/rodrigorocha1/monitoramento_clima_tempo_real)
