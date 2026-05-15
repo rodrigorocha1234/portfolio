@@ -3,7 +3,7 @@ layout: project
 title: "Proposta de Arquitetura para Web Scraping do G1 com Padrão Chain of Responsibility (Cadeia de reponsabilidade)"
 date: 2025-07-27
 image: /assets/img/posts/web_scraping_g1/web_scraping_g1.png
-description: ""
+description: "Criação de um pipeline de dados fácil de realizar manutenção — estruturado, modular e escalável"
 tags: ['python', 'beautifulsoup', 'webscraping','padrão_de_projeto']
 ---
 

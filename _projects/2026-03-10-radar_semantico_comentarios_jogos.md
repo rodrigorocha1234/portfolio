@@ -3,7 +3,7 @@ layout: project
 title: "Mapa Semântico de Tendências em Games"
 date: 2026-03-10
 image: /assets/img/posts/radar_semantico_jogos/thumb.png
-description: "Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam, transformando dados não estruturados em insights sobre reputação, sentimentos e tendências."
+description: "Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam"
 tags: ['deep_learning', 'regressao', 'python']
 ---
 

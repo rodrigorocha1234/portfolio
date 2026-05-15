@@ -3,8 +3,8 @@ layout: project
 title: "Reformulação Web Scraping Distribuído com RabbitMQ + Python + MongoDB"
 date: 2025-11-04
 image: /assets/img/posts/refomulacao_web_scrapping_rabbitmq/thumb.png
-description: ""
-tags: ['python', 'nosql', 'rabbitmq']
+description: "Proposta de uma nova esturutura de coleta de webscraping"
+tags: ['python', 'nosql', 'rabbitmq', 'mongodb']
 ---
 
 

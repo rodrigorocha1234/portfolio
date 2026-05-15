@@ -3,7 +3,7 @@ layout: project
 title: Análise exploratória dos imóveis da Cidade de Ribeirão Preto
 date: 2025-02-26
 image: /assets/img/posts/analise_exploratoria_casas/thumb.png
-description: Os dados foram extraídos do site vivareal (https://www.vivareal.com.br/), atráves de um processo de web scraping (Mostrar o projeto anterior), gerando uma base de 8395 linhas e 9 colunas. Foram incluidas, em alguns casos, análise para os bairros Jardim Botânico, Centro, Nova Aliança, Jardim Irajá, Sumarezinho, Vila Monte Alegre, Bonfim Paulista, Ribeirânia e Campos Eliseos.
+description: Os dados foram extraídos do site vivareal (https://www.vivareal.com.br/), atráves de um processo de web scraping (Mostrar o projeto anterior), gerando uma base de 8395 linhas e 9 colunas.
 tags: ['python', 'webscraping', 'google', 'planilhas', 'selenium']
 ---
 

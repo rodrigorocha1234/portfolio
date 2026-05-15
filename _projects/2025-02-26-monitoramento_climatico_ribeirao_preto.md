@@ -3,7 +3,7 @@ layout: project
 title: Sistema de Monitoramento Climático de Ribeirão Preto
 date: 2025-02-26
 image: /assets/img/posts/monitoramento_climatico_ribeirao_preto/monitoramento_kafka_grafana.jpg
-description: Este projeto tem como objetivo propor um sistema de monitoramento climático para a região de Ribeirão Preto, utilizando Apache Kafka para coleta de dados e Grafana para visualização e análise em tempo real.
+description: Este projeto tem como objetivo propor um sistema de monitoramento climático para a região de Ribeirão Preto
 tags: ['grafana', 'apache_kafka', 'python']
 ---
 

@@ -3,12 +3,13 @@ layout: project
 title: "Projeto: Edição de Imagem com Python"
 date: 2025-02-27
 image: /assets/img/posts/newsletter_youtube_dashboard/thumb.png
-description: "O objetivo deste projeto é propor um código para edição de imagem, preenchendo um certificado de conclusão de curso. Os dados que serão preenchidos no certificado serão obtidos a partir de uma planilha. A inspiração foi baseada no vídeo do canal DEV APRENDER: Preenchendo certificados automaticamente com Python."
+description: "O objetivo deste projeto é propor um código para edição de imagem, preenchendo um certificado de conclusão de curso."
 tags: ['python','edição' , 'imagens']
 ---
 
 
-
+## Introdução
+O objetivo deste projeto é propor um código para edição de imagem, preenchendo um certificado de conclusão de curso. Os dados que serão preenchidos no certificado serão obtidos a partir de uma planilha. A inspiração foi baseada no vídeo do canal DEV APRENDER: Preenchendo certificados automaticamente com Python.
 
 ## 2. Fluxo do Projeto
 

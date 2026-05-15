@@ -3,7 +3,7 @@ layout: project
 title: Clustering de comentários (Multicanal) de vários comentários de vídeo do youtube usando deep learning e kmeans
 date: 2026-03-01
 image: /assets/img/posts/cluster_canais_dl/thumb.png
-description: ""
+description: "Agrupamento de comentários por assunto, canal e vídeo"
 tags: ['deep_learning', 'pytorch', 'python', 'youtube', 'restricted_boltzman_machines', 'kmeans']
 ---
 

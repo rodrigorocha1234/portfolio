@@ -3,7 +3,7 @@ layout: project
 title: "Projeto: Web Scraping em massa com python de dados completos da ONS"
 date: 2025-08-02
 image: /assets/img/posts/web_scraping_ons/ons.png
-description: ""
+description: "Criação de um pipeline de dados fácil de realizar manutenção — estruturado, modular e escalável"
 tags: ['python', 'beautifulsoup', 'webscraping','padrão_de_projeto']
 ---
 

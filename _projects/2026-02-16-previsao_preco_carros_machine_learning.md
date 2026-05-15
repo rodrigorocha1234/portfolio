@@ -3,7 +3,7 @@ layout: project
 title: "Previsão de Preços de Veículos – Base FIPE Janeiro de 2026"
 date: 2026-02-16
 image: /assets/img/posts/previsao_preco_carros/thumb.png
-description: ""
+description: "Proposta um modelo de machine leaning de previsão de preços"
 tags: ['machine_learning', 'regressao', 'python']
 ---
 

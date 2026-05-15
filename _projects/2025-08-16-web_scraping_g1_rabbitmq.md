@@ -3,7 +3,7 @@ layout: project
 title: "Extraindo dados do site do g1 rss e salvando notícias em arquivo docx, usando rabbitmq (Padrão WORK QUEUE)"
 date: 2025-08-16
 image: /assets/img/posts/web_scraping_g1_rabbitmq/web_scraping_g1_rabbitmq.png
-description: ""
+description: "Demonstração de uma arquitetura distribuida de coleta de vários sites RSS"
 tags: ['python', 'beautifulsoup', 'webscraping','padrão_de_projeto', rabbitmq]
 ---
 

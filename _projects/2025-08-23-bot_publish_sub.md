@@ -3,7 +3,7 @@ layout: project
 title: "Explorando o Padrão Publish/Subscribe com RabbitMQ: Construindo um Bot que mostra a disponibilidade de bikes para a cidade de curitiba"
 date: 2025-08-23
 image: /assets/img/posts/bot_publish_sub/bot.png
-description: ""
+description: "Explorando rabbitmq e padrão Padrão Publish/Subscribe "
 tags: ['python','padrão_de_projeto', rabbitmq]
 ---
 
