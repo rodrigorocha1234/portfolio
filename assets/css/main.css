@@ -1,13 +1,7 @@
 body {
   font-family: Ubuntu, sans-serif;
-  padding-top: 90px;
 }
 
-@media (max-width: 767px) {
-  body {
-    padding-top: 150px;
-  }
-}
 
 .skills-grid {
   display: grid;
@@ -453,22 +447,6 @@ skills
   transform: translateY(-1px);
 }
 
-/* ==========================================================
-   NAVBAR TOTALMENTE RESPONSIVA
-   ========================================================== */
-
-/* Espaçamento global para compensar navbar fixa */
-body {
-  padding-top: 90px;
-}
-
-/* Altura maior no mobile (duas linhas) */
-@media (max-width: 767px) {
-  body {
-    padding-top: 150px;
-  }
-}
-
 /* Navbar principal */
 nav {
   position: fixed;
@@ -817,6 +795,7 @@ nav a:focus-visible {
     padding: 6px 9px;
   }
 }
+
 /* ==========================================================
    PROJECT CARDS (SEM ANIMAÇÃO DE SCROLL)
    ========================================================== */
