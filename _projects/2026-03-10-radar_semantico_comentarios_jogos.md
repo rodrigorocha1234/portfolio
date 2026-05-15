@@ -3,10 +3,13 @@ layout: project
 title: "Mapa Semântico de Tendências em Games"
 date: 2026-03-10
 image: /assets/img/posts/radar_semantico_jogos/thumb.png
-description: "Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam, transformando dados não estruturados em insights sobre reputação, sentimentos e tendências, com visualização via mapa auto-organizável (SOM), para identificar  padrões de opinião, sentimentos e tendências em relação a diferentes jogos e gêneros.. O projeto inclui rastreamento de modelos via MLflow para versionamento de análises e resultados."
+description: "Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam, transformando dados não estruturados em insights sobre reputação, sentimentos e tendências."
 tags: ['deep_learning', 'regressao', 'python']
 ---
 
+## Objetivo 
+
+Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam, transformando dados não estruturados em insights sobre reputação, sentimentos e tendências, com visualização via mapa auto-organizável (SOM), para identificar  padrões de opinião, sentimentos e tendências em relação a diferentes jogos e gêneros.. O projeto inclui rastreamento de modelos via MLflow 
 
 ## Tecnologias Utilizadas
 
