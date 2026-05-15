@@ -6,9 +6,13 @@
     - Criação e manutenção de pipelines de ETL utilizando Pentaho Data Integration, garantindo a transformação e o carregamento eficiente de dados.
     - Consultas e manipulação de dados em bancos de dados  para suporte e validação de informações
   tech:
-    - Python
-    - Docker
-    - RabbitMQ
+    - Pentaho Data Integration
+    - SQL
+    - SQL Server
+    - API REST
+    - API SOUP
+    - MYSQL
+    - ORACLE
 
 
 
@@ -21,8 +25,12 @@
     - Integração com ERPs Sankhya, Alterdata, Senior e forças de vendas Mercos, Máxima Tech.
     
   tech:
-    - Python
-    - Docker
-    - RabbitMQ
+    - Pentaho Data Integration
+    - SQL
+    - SQL Server
+    - API REST
+    - API SOUP
+    - MYSQL
+    - ORACLE
 
 
