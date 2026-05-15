@@ -49,6 +49,9 @@ skills:
   - name: dbt
     icon: /assets/devicons/dbt.png
 
+  - name: linux
+    icon: https://cdn.simpleicons.org/linux/67e8f9
+
 
 
 
