@@ -3,9 +3,7 @@
    ========================================================== */
 
 /* Import da fonte (caso ainda não esteja no <head>, pode deixar aqui no CSS) */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
-/* Fonte padrão do site */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 body {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;   /* Regular */
@@ -23,6 +21,10 @@ h1,
   font-weight: 700;   /* Bold */
   letter-spacing: -0.02em;
   line-height: 1.2;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 /* ==========================================================
@@ -34,6 +36,10 @@ h3,
 .prose-custom h2,
 .prose-custom h3 {
   font-family: 'Ubuntu', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
   font-weight: 500;   /* Medium */
   letter-spacing: -0.01em;
   line-height: 1.35;
@@ -44,11 +50,13 @@ h3,
    ========================================================== */
 p,
 li,
+ul,
 span,
 .prose-custom p,
 .prose-custom li {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 400;   /* Regular */
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   line-height: 1.75;
 }
 
@@ -220,6 +228,7 @@ pre {
   font-weight: 800;
   color: white;
   margin: 32px 0 16px;
+  font-family: "Ubuntu Bold", sans-serif;
 }
 
 .prose-custom h2 {
@@ -229,6 +238,7 @@ pre {
   margin: 28px 0 12px;
   border-left: 3px solid #22d3ee;
   padding-left: 10px;
+  font-family: "Ubuntu light", sans-serif;
 }
 
 .prose-custom h3 {
@@ -243,6 +253,7 @@ pre {
   margin: 14px 0;
   color: #cbd5e1;
   text-align: justify;
+  font-family: "Ubuntu light", sans-serif;
 }
 
 /* LISTS */
