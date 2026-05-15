@@ -7,12 +7,12 @@
     - Consultas e manipulação de dados em bancos de dados  para suporte e validação de informações
   tech:
     - Pentaho Data Integration
-    - SQL
-    - SQL Server
-    - API REST
-    - API SOUP
-    - MYSQL
-    - ORACLE
+    - Sql
+    - Sql Server
+    - API Rest
+    - API Spup
+    - Mysql
+    - Oracle
 
 
 
@@ -26,11 +26,11 @@
     
   tech:
     - Pentaho Data Integration
-    - SQL
-    - SQL Server
-    - API REST
-    - API SOUP
-    - MYSQL
+    - Sql
+    - Sql Server
+    - API Rest
+    - API Spup
+    - Mysql
     - ORACLE
 
 
