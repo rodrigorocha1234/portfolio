@@ -242,6 +242,7 @@ pre {
 .prose-custom p {
   margin: 14px 0;
   color: #cbd5e1;
+  text-align: justify;
 }
 
 /* LISTS */
