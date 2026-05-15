@@ -1,89 +1,100 @@
 /* ==========================================================
-   TIPOGRAFIA GLOBAL — FAMÍLIA UBUNTU
+   TIPOGRAFIA GLOBAL — UBUNTU
    ========================================================== */
 
-/* Importa as famílias necessárias */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu+Mono:wght@400;700&display=swap');
+/* Import da fonte (caso ainda não esteja no <head>, pode deixar aqui no CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
-/* ==========================================================
-   VARIÁVEIS DE FONTE
-   ========================================================== */
-:root {
-  --font-sans: 'Ubuntu', sans-serif;
-  --font-body: 'Ubuntu Sans', sans-serif;
-  --font-mono: 'Ubuntu Mono', monospace;
-}
-
-/* ==========================================================
-   TEXTO BASE
-   ========================================================== */
+/* Fonte padrão do site */
 body {
-  font-family: var(--font-sans);
-  font-weight: 400;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;   /* Regular */
   line-height: 1.6;
   color: var(--text-1);
 }
 
-/* Conteúdo textual */
-p,
-ul,
-ol,
-li,
-th,
-td {
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.7;
-  color: inherit;
-  text-align: justify;
-  text-justify: inter-word;
+/* ==========================================================
+   TÍTULOS PRINCIPAIS (H1)
+   ========================================================== */
+h1,
+.text-title,
+.prose-custom h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;   /* Bold */
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 /* ==========================================================
-   TÍTULOS
+   SUBTÍTULOS (H2, H3)
    ========================================================== */
-h1,
 h2,
 h3,
-.text-title,
-.prose-custom h1 {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+.text-subtitle,
+.prose-custom h2,
+.prose-custom h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;   /* Medium */
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+/* ==========================================================
+   PARÁGRAFOS E TEXTO CORRIDO
+   ========================================================== */
+p,
+li,
+span,
+.prose-custom p,
+.prose-custom li {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;   /* Regular */
+  line-height: 1.75;
+}
+
+/* ==========================================================
+   TEXTO AUXILIAR / LEGENDAS
+   ========================================================== */
+small,
+.text-caption,
+.text-muted,
+.text-subtle {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;   /* Light */
+}
+
+/* ==========================================================
+   TAGS, BADGES E BOTÕES
+   ========================================================== */
+.skill-badge,
+.keyword-badge,
+.project-tag,
+.filter-tag,
+.contact-card,
+.tag,
+.exp-tag,
+.project-tag-premium,
+button {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;   /* Medium */
+}
+
+/* ==========================================================
+   NAVBAR E LINKS
+   ========================================================== */
+nav a,
+#greeting {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;   /* Medium */
 }
 
 /* ==========================================================
    CÓDIGO
    ========================================================== */
 code,
-pre,
-kbd,
-samp,
-.mono {
-  font-family: var(--font-mono);
-  font-weight: 400;
+pre {
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
 }
-
-/* ==========================================================
-   CLASSES UTILITÁRIAS
-   ========================================================== */
-
-/* Família Ubuntu */
-.font-ubuntu-light   { font-family: var(--font-sans); font-weight: 300; }
-.font-ubuntu-regular { font-family: var(--font-sans); font-weight: 400; }
-.font-ubuntu-medium  { font-family: var(--font-sans); font-weight: 500; }
-.font-ubuntu-bold    { font-family: var(--font-sans); font-weight: 700; }
-
-/* Família Ubuntu Sans */
-.font-ubuntu-sans {
-  font-family: var(--font-body);
-  font-weight: 400;
-}
-
-/* Família Ubuntu Mono */
-.font-ubuntu-mono      { font-family: var(--font-mono); font-weight: 400; }
-.font-ubuntu-mono-bold { font-family: var(--font-mono); font-weight: 700; }
 
 .skills-grid {
   display: grid;
