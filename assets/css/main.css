@@ -1,7 +1,13 @@
 body {
   font-family: Ubuntu, sans-serif;
+  padding-top: 90px;
 }
 
+@media (max-width: 767px) {
+  body {
+    padding-top: 150px;
+  }
+}
 
 .skills-grid {
   display: grid;
@@ -447,11 +453,23 @@ skills
   transform: translateY(-1px);
 }
 
-
 /* ==========================================================
-   NAVBAR PREMIUM
+   NAVBAR TOTALMENTE RESPONSIVA
    ========================================================== */
 
+/* Espaçamento global para compensar navbar fixa */
+body {
+  padding-top: 90px;
+}
+
+/* Altura maior no mobile (duas linhas) */
+@media (max-width: 767px) {
+  body {
+    padding-top: 150px;
+  }
+}
+
+/* Navbar principal */
 nav {
   position: fixed;
   top: 0;
@@ -459,46 +477,40 @@ nav {
   width: 100%;
   z-index: 50;
 
-  /* Glassmorphism */
   background: rgba(10, 22, 40, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  /* Borda e sombra */
   border-bottom: 1px solid rgba(34, 211, 238, 0.08);
+
   box-shadow:
     0 10px 35px rgba(0, 0, 0, 0.28),
     inset 0 -1px 0 rgba(255, 255, 255, 0.03);
 
-  /* Transições suaves */
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    backdrop-filter 0.3s ease;
+    box-shadow 0.3s ease;
 }
 
-/* Faixa luminosa superior */
+/* Glow horizontal */
 nav::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(34, 211, 238, 0.05) 25%,
-      rgba(34, 211, 238, 0.10) 50%,
-      rgba(34, 211, 238, 0.05) 75%,
-      transparent 100%
-    );
-
-  opacity: 0.9;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(34, 211, 238, 0.05) 25%,
+    rgba(34, 211, 238, 0.10) 50%,
+    rgba(34, 211, 238, 0.05) 75%,
+    transparent 100%
+  );
 }
 
-/* Hover geral */
+/* Hover */
 nav:hover {
   background: rgba(10, 22, 40, 0.88);
   border-bottom-color: rgba(34, 211, 238, 0.18);
@@ -508,7 +520,7 @@ nav:hover {
     0 0 35px rgba(34, 211, 238, 0.06);
 }
 
-/* Container interno */
+/* Container */
 nav .max-w-6xl {
   position: relative;
   z-index: 1;
@@ -522,14 +534,14 @@ nav a[href="/"] {
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #67e8f9;
+  white-space: nowrap;
 
-  text-shadow:
-    0 0 12px rgba(34, 211, 238, 0.25);
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
 
   transition:
     color 0.25s ease,
-    text-shadow 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    text-shadow 0.25s ease;
 }
 
 nav a[href="/"]:hover {
@@ -546,18 +558,24 @@ nav a[href="/"]:hover {
    ========================================================== */
 
 #greeting {
-  color: rgba(103, 232, 249, 0.90);
+  color: rgba(103, 232, 249, 0.9);
   font-weight: 600;
   letter-spacing: 0.18em;
   text-shadow: 0 0 8px rgba(34, 211, 238, 0.18);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ==========================================================
-   LINKS DE NAVEGAÇÃO
+   LINKS DESKTOP
    ========================================================== */
 
 nav .md\:flex a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
 
   color: #cbd5e1;
   font-weight: 500;
@@ -570,7 +588,6 @@ nav .md\:flex a {
     transform 0.25s ease;
 }
 
-/* Hover */
 nav .md\:flex a:hover {
   color: #67e8f9;
   transform: translateY(-1px);
@@ -585,7 +602,6 @@ nav .md\:flex a::after {
 
   width: 0;
   height: 2px;
-
   border-radius: 9999px;
 
   background: linear-gradient(
@@ -595,9 +611,7 @@ nav .md\:flex a::after {
     #7dd3fc
   );
 
-  box-shadow:
-    0 0 12px rgba(34, 211, 238, 0.35);
-
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.35);
   transition: width 0.28s ease;
 }
 
@@ -606,11 +620,29 @@ nav .md\:flex a:hover::after {
 }
 
 /* ==========================================================
-   BOTÕES MOBILE
+   LINKS MOBILE
    ========================================================== */
 
 .md\:hidden a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+  padding: 8px 14px;
+
   border-radius: 9999px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  white-space: nowrap;
+
   transition:
     transform 0.2s ease,
     background 0.2s ease,
@@ -630,36 +662,161 @@ nav .md\:flex a:hover::after {
 }
 
 /* ==========================================================
-   ESTADO DE FOCO (Acessibilidade)
+   ACESSIBILIDADE
    ========================================================== */
 
 nav a:focus-visible {
   outline: 2px solid #22d3ee;
-  outline-offset: 4px;
+  outline-offset: 3px;
   border-radius: 6px;
 }
 
 /* ==========================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - DESKTOP GRANDE
    ========================================================== */
 
-@media (max-width: 768px) {
-  nav {
-    background: rgba(10, 22, 40, 0.84);
+@media (min-width: 1280px) {
+  nav .md\:flex {
+    gap: 2rem;
   }
 
   #greeting {
-    display: none;
+    font-size: 0.75rem;
   }
 }
 
+/* ==========================================================
+   RESPONSIVIDADE - TABLET
+   ========================================================== */
+
+@media (max-width: 1279px) {
+  #greeting {
+    max-width: 220px;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+  }
+
+  nav .md\:flex {
+    gap: 1.25rem;
+  }
+
+  nav .md\:flex a {
+    font-size: 0.82rem;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVIDADE - TABLET MENOR
+   ========================================================== */
+
+@media (max-width: 1024px) {
+  #greeting {
+    display: none !important;
+  }
+
+  nav .max-w-6xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  nav .md\:flex {
+    gap: 1rem;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVIDADE - MOBILE
+   ========================================================== */
+
+@media (max-width: 767px) {
+  nav {
+    background: rgba(10, 22, 40, 0.84);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  nav .max-w-6xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+
+  /* Primeira linha */
+  nav .flex.items-center.justify-between {
+    justify-content: center;
+  }
+
+  /* Logo centralizada */
+  nav a[href="/"] {
+    font-size: 1rem;
+  }
+
+  /* Menu mobile */
+  .md\:hidden {
+    margin-top: 0.9rem;
+  }
+
+  .md\:hidden > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .md\:hidden a {
+    font-size: 0.72rem;
+    padding: 8px 12px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVIDADE - MOBILE PEQUENO
+   ========================================================== */
+
 @media (max-width: 480px) {
+  body {
+    padding-top: 165px;
+  }
+
   nav {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
+
+  nav a[href="/"] {
+    font-size: 0.95rem;
+  }
+
+  .md\:hidden a {
+    font-size: 0.68rem;
+    padding: 7px 10px;
+    min-height: 36px;
+  }
+
+  .md\:hidden > div {
+    gap: 0.4rem;
+  }
 }
 
+/* ==========================================================
+   RESPONSIVIDADE - TELAS MUITO PEQUENAS
+   ========================================================== */
+
+@media (max-width: 360px) {
+  body {
+    padding-top: 180px;
+  }
+
+  nav a[href="/"] {
+    font-size: 0.88rem;
+  }
+
+  .md\:hidden a {
+    font-size: 0.65rem;
+    padding: 6px 9px;
+  }
+}
 /* ==========================================================
    PROJECT CARDS (SEM ANIMAÇÃO DE SCROLL)
    ========================================================== */
