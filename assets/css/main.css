@@ -613,14 +613,27 @@ nav a[href="/"]:hover {
     0 0 28px rgba(34, 211, 238, 0.15);
 }
 
+/* Logo */
+nav a:first-child {
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 700;
+}
+
+/* Links do menu (desktop e mobile) */
+nav a:not(:first-child) {
+  font-family: 'Ubuntu Mono', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
 /* ==========================================================
    SAUDAÇÃO
    ========================================================== */
 
 #greeting {
-  color: rgba(103, 232, 249, 0.9);
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.25em;
   text-shadow: 0 0 8px rgba(34, 211, 238, 0.18);
 
   overflow: hidden;
