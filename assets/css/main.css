@@ -285,13 +285,12 @@ pre {
 
 
 ---------------------
-skills
+.skills
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  background-color: #0D1F3C;
 }
 
 .skill-badge {
