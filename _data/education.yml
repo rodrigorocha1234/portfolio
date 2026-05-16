@@ -3,10 +3,10 @@
   website: http://www.fatecrp.edu.br/
   logo: /assets/img/logo_fatec.png
   tcc: > 
-    IMPLEMENTANDO O PROCESSO DE ETL (EXTRACT, TRANSFORM AND LOAD) 
-    PARA A ANÁLISE DE VARIÁVEIS PERTINENTES A UM DATASET ORIUNDO DA 
-    PLATAFORMA DE DADOS ABERTOS DO GOVERNO FEDERAL NO QUE TANGE AS 
-    RECLAMAÇÕES REALIZADAS ENTRE OS ANOS DE 2017 E 2018
+    implementando o processo de etl (extract, transform and load) 
+    para a análise de variáveis pertinentes a um dataset oriundo 
+    da plataforma de dados abertos do governo federal no que tange as
+    reclamações realizadas entre os anos de 2017 e 2018
   tcc_url: https://drive.google.com/file/d/1EXZsx3VGyY2facwW08Kuz_zXOrFRzNDj/view?usp=sharing
   year: 2016 - 2020
   description: ""
