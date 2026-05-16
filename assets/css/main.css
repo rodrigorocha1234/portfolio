@@ -16,6 +16,7 @@
 >>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
 body {
   font-family: Ubuntu, sans-serif;
+<<<<<<< HEAD
 =======
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
@@ -166,6 +167,16 @@ pre {
 >>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
 =======
 >>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
+=======
+  padding-top: 90px;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 150px;
+  }
+}
+>>>>>>> parent of a4663f0 (Correção css)
 
 .skills-grid {
   display: grid;
@@ -615,6 +626,22 @@ skills
   transform: translateY(-1px);
 }
 
+/* ==========================================================
+   NAVBAR TOTALMENTE RESPONSIVA
+   ========================================================== */
+
+/* Espaçamento global para compensar navbar fixa */
+body {
+  padding-top: 90px;
+}
+
+/* Altura maior no mobile (duas linhas) */
+@media (max-width: 767px) {
+  body {
+    padding-top: 150px;
+  }
+}
+
 /* Navbar principal */
 nav {
   position: fixed;
@@ -963,7 +990,6 @@ nav a:focus-visible {
     padding: 6px 9px;
   }
 }
-
 /* ==========================================================
    PROJECT CARDS (SEM ANIMAÇÃO DE SCROLL)
    ========================================================== */
