@@ -46,10 +46,10 @@ skills:
   - name: Kafka
     icon: https://cdn.simpleicons.org/apachekafka/67e8f9
 
-  - name: dbt
+  - name: DBT
     icon: /assets/devicons/dbt.png
 
-  - name: linux
+  - name: Linux
     icon: https://cdn.simpleicons.org/linux/67e8f9
 
 
