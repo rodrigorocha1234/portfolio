@@ -985,9 +985,32 @@ pre {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  position: relative;
 
   color: var(--text-1);
   text-decoration: none;
+}
+
+.tcc-tooltip {
+  position: absolute;
+  left: 0;
+  bottom: -26px;
+
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(15, 30, 60, 0.85);
+  border: 1px solid rgba(103, 232, 249, 0.2);
+
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.2s ease;
+
+  pointer-events: none;
 }
 
 /* título fixo (não muda nunca) */
@@ -1029,4 +1052,10 @@ pre {
 .tcc-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* aparece no hover */
+.tcc-link:hover .tcc-tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
