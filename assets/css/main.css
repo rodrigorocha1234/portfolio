@@ -5,6 +5,7 @@
 
 /* Import da fonte (caso ainda não esteja no <head>, pode deixar aqui no CSS) */
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 =======
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
@@ -15,10 +16,33 @@
 >>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
 body {
   font-family: Ubuntu, sans-serif;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* Fonte padrão do site */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;   /* Regular */
+  line-height: 1.6;
+  color: var(--text-1);
+}
+
+/* ==========================================================
+   TÍTULOS PRINCIPAIS (H1)
+   ========================================================== */
+h1,
+.text-title,
+.prose-custom h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;   /* Bold */
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+>>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 }
 
 <<<<<<< HEAD
 /* ==========================================================
+<<<<<<< HEAD
    TÍTULOS PRINCIPAIS (H1)
    ========================================================== */
 h1,
@@ -40,6 +64,10 @@ h1,
 /* ==========================================================
    SUBTÍTULOS (H2, H3)
    ========================================================== */
+=======
+   SUBTÍTULOS (H2, H3)
+   ========================================================== */
+>>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 h2,
 h3,
 .text-subtitle,
@@ -47,10 +75,13 @@ h3,
 .prose-custom h3 {
   font-family: 'Ubuntu', sans-serif;
 <<<<<<< HEAD
+<<<<<<< HEAD
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+=======
+>>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 =======
 >>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
   font-weight: 500;   /* Medium */
@@ -64,6 +95,7 @@ h3,
 p,
 li,
 <<<<<<< HEAD
+<<<<<<< HEAD
 ul,
 span,
 .prose-custom p,
@@ -72,11 +104,16 @@ span,
   font-weight: 300;
   font-style: normal;
 =======
+=======
+>>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 span,
 .prose-custom p,
 .prose-custom li {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;   /* Regular */
+<<<<<<< HEAD
+>>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
+=======
 >>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
   line-height: 1.75;
 }
@@ -124,8 +161,11 @@ code,
 pre {
   font-family: 'Ubuntu Mono', 'Courier New', monospace;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
+=======
+>>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 
 .skills-grid {
   display: grid;
