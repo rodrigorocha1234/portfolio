@@ -1,78 +1,29 @@
-<nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0a1628]/80 border-b border-white/5">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
-    
-    <!-- Linha principal -->
-    <div class="flex items-center justify-between gap-4">
-      
-      <!-- Logo -->
-      <a href="/"
-         class="text-cyan-300 font-bold text-lg sm:text-xl md:text-2xl whitespace-nowrap">
-        &lt; DataEng /&gt;
-      </a>
+<nav class="navbar">
+  <div class="nav-container">
 
-      <!-- Saudação (oculta em telas pequenas) -->
-      <p id="greeting"
-         class="hidden lg:block text-cyan-300 uppercase tracking-widest text-sm xl:text-base text-center flex-1">
-      </p>
+    <!-- Logo -->
+    <a href="/" class="logo">
+      &lt; DataEng /&gt;
+    </a>
 
-      <!-- Menu Desktop -->
-      <div class="hidden md:flex items-center gap-4 lg:gap-8 text-base lg:text-lg font-medium">
-        <a href="{{ '/projects/' | relative_url }}"
-           class="text-slate-300 hover:text-cyan-300 transition-colors duration-200">
-          Projetos
-        </a>
+    <!-- Saudação -->
+    <p id="greeting" class="greeting hidden lg:block"></p>
 
-        <a href="#experience"
-           class="text-slate-300 hover:text-cyan-300 transition-colors duration-200">
-          Experiência
-        </a>
-
-        <a href="#skills"
-           class="text-slate-300 hover:text-cyan-300 transition-colors duration-200">
-          Habilidades
-        </a>
-
-        <a href="#contacts"
-           class="text-slate-300 hover:text-cyan-300 transition-colors duration-200">
-          Contato
-        </a>
-      </div>
+    <!-- Desktop menu -->
+    <div class="nav-links">
+      <a href="{{ '/projects/' | relative_url }}">Projetos</a>
+      <a href="#experience">Experiência</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#contacts">Contato</a>
     </div>
 
-    <!-- Menu Mobile -->
-    <div class="md:hidden mt-4">
-      <div class="flex flex-wrap justify-center gap-2 text-sm font-medium">
-        <a href="{{ '/projects/' | relative_url }}"
-           class="px-4 py-2 rounded-full text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 hover:bg-cyan-400/20 transition">
-          Projetos
-        </a>
+  </div>
 
-        <a href="#experience"
-           class="px-4 py-2 rounded-full text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 hover:bg-cyan-400/20 transition">
-          Experiência
-        </a>
-
-        <a href="#skills"
-<<<<<<< HEAD
-<<<<<<< HEAD
-           class="px-4 py-2 rounded-full text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 hover:bg-cyan-400/20 transition">
-          Habilidades
-=======
-           class="px-3 py-2 rounded-full text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 hover:bg-cyan-400/20 transition">
-          Skills
->>>>>>> parent of 3d10873 (Translate 'Skills' to 'Habilidades' in nav.html)
-=======
-           class="px-3 py-2 rounded-full text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 hover:bg-cyan-400/20 transition">
-          Skills
->>>>>>> parent of 3d10873 (Translate 'Skills' to 'Habilidades' in nav.html)
-        </a>
-
-        <a href="#contacts"
-           class="px-4 py-2 rounded-full text-cyan-300 bg-cyan-400/10 border border-cyan-400/20 hover:bg-cyan-400/20 transition">
-          Contato
-        </a>
-      </div>
-    </div>
-
+  <!-- Mobile menu -->
+  <div class="mobile-links">
+    <a href="{{ '/projects/' | relative_url }}">Projetos</a>
+    <a href="#experience">Experiência</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#contacts">Contato</a>
   </div>
 </nav>

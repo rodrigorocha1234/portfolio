@@ -1,26 +1,29 @@
-<section id="contacts" class="py-20 px-6 bg-section border-t border-cyan-400/20">
+<section id="contacts" class="contacts-section py-20 px-6 bg-section border-t border-cyan-400/20">
   <div class="max-w-4xl mx-auto text-center">
 
-    <h2 class="text-3xl font-bold text-white mb-6 ">
+    <h2 class="text-3xl font-bold text-white mb-4">
       Contato
     </h2>
 
-    <p class="text-gray-400 mb-10 text-center">
+    <p class="text-subtle mb-10 text-center">
       Entre em contato comigo por e-mail ou redes profissionais.
     </p>
 
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
+    <div class="contact-grid">
 
       <a href="mailto:{{ site.contacts.email }}" class="contact-card">
-        📧 {{ site.contacts.email }} 
+        <span class="contact-icon">📧</span>
+        <span class="contact-text">{{ site.contacts.email }}</span>
       </a>
 
       <a href="{{ site.contacts.github }}" target="_blank" class="contact-card">
-        🐙 GitHub
+        <span class="contact-icon">🐙</span>
+        <span class="contact-text">GitHub</span>
       </a>
 
       <a href="{{ site.contacts.linkedin }}" target="_blank" class="contact-card">
-        💼 LinkedIn
+        <span class="contact-icon">💼</span>
+        <span class="contact-text">LinkedIn</span>
       </a>
 
     </div>

@@ -5,32 +5,13 @@
        style="background-image: url('{{ site.hero.background | relative_url }}');">
   </div>
 
-  <!-- Overlay principal (mais contraste para leitura) -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
-
-  <!-- Vinheta central (foco no texto) -->
-  <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-black/25"></div>
-
-    <div class="absolute inset-0"
-         style="background: radial-gradient(circle at center,
-         rgba(0,0,0,0.55) 0%,
-         rgba(0,0,0,0.25) 40%,
-         rgba(0,0,0,0.75) 100%);">
-    </div>
-  </div>
-
-  <!-- Glow decorativo (mantido leve) -->
-  <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500/15 blur-[120px] rounded-full"></div>
-
   <!-- Conteúdo -->
   <div class="relative max-w-2xl text-white
-              bg-black/25 backdrop-blur-[3px]
+              bg-white/10 backdrop-blur-[6px]
               px-8 py-10 rounded-2xl
-              border border-white/10
-              [text-shadow:0_2px_18px_rgba(0,0,0,0.9)]">
+              border border-white/20">
 
-    <p class="uppercase tracking-[0.3em] text-cyan-300 text-xs animate-fade-in text-center">
+    <p class="uppercase tracking-[0.3em] text-cyan-200 text-xs animate-fade-in text-center">
       {{ site.hero.greeting }}
     </p>
 
@@ -38,7 +19,7 @@
       {{ site.hero.name }}
     </h1>
 
-    <p class="text-gray-200 mt-4 text-sm md:text-lg animate-fade-in-up delay-100">
+    <p class="text-white/80 mt-4 text-sm md:text-lg animate-fade-in-up delay-100">
       {{ site.hero.subtitle }}
     </p>
 

@@ -562,353 +562,146 @@ pre {
   background: rgba(56, 189, 248, 0.18);
   transform: translateY(-1px);
 }
-
-/* Navbar principal */
-nav {
+/* =========================
+   NAVBAR BASE
+========================= */
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 50;
 
-  background: rgba(10, 22, 40, 0.72);
+  background: rgba(10, 22, 40, 0.82);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border-bottom: 1px solid rgba(34, 211, 238, 0.08);
-
-  box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.28),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
-
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.12);
 }
 
-/* Glow horizontal */
-nav::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+/* container */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
 
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(34, 211, 238, 0.05) 25%,
-    rgba(34, 211, 238, 0.10) 50%,
-    rgba(34, 211, 238, 0.05) 75%,
-    transparent 100%
-  );
-}
-
-/* Hover */
-nav:hover {
-  background: rgba(10, 22, 40, 0.88);
-  border-bottom-color: rgba(34, 211, 238, 0.18);
-
-  box-shadow:
-    0 16px 45px rgba(0, 0, 0, 0.40),
-    0 0 35px rgba(34, 211, 238, 0.06);
-}
-
-/* Container */
-nav .max-w-6xl {
-  position: relative;
-  z-index: 1;
-}
-
-/* ==========================================================
-   LOGO
-   ========================================================== */
-
-nav a[href="/"] {
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #67e8f9;
-  white-space: nowrap;
-
-  text-shadow: 0 0 12px rgba(34, 211, 238, 0.25);
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease,
-    text-shadow 0.25s ease;
-}
-
-nav a[href="/"]:hover {
-  color: #a5f3fc;
-  transform: translateY(-1px);
-
-  text-shadow:
-    0 0 18px rgba(34, 211, 238, 0.45),
-    0 0 28px rgba(34, 211, 238, 0.15);
-}
-
-/* ==========================================================
-   SAUDAÇÃO
-   ========================================================== */
-
-#greeting {
-  color: rgba(103, 232, 249, 0.9);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-shadow: 0 0 8px rgba(34, 211, 238, 0.18);
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* ==========================================================
-   LINKS DESKTOP
-   ========================================================== */
-
-nav .md\:flex a {
-  position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 
+  padding: 14px 20px;
+  gap: 16px;
+}
+
+/* logo */
+.logo {
+  color: #67e8f9;
+  font-weight: 700;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* greeting */
+.greeting {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: rgba(103, 232, 249, 0.85);
+}
+
+/* =========================
+   DESKTOP LINKS
+========================= */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
   color: #cbd5e1;
   font-weight: 500;
-  letter-spacing: 0.02em;
-
-  padding: 8px 0;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+  transition: 0.2s;
+  position: relative;
 }
 
-nav .md\:flex a:hover {
+.nav-links a:hover {
   color: #67e8f9;
-  transform: translateY(-1px);
 }
 
-/* Linha animada */
-nav .md\:flex a::after {
+/* underline animation */
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
-
-  width: 0;
+  bottom: -4px;
   height: 2px;
-  border-radius: 9999px;
-
-  background: linear-gradient(
-    90deg,
-    #22d3ee,
-    #67e8f9,
-    #7dd3fc
-  );
-
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.35);
-  transition: width 0.28s ease;
+  width: 0;
+  background: #67e8f9;
+  transition: 0.25s;
 }
 
-nav .md\:flex a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* ==========================================================
-   LINKS MOBILE
-   ========================================================== */
-
-.md\:hidden a {
-  display: inline-flex;
-  align-items: center;
+/* =========================
+   MOBILE MENU (IMPORTANTE)
+========================= */
+.mobile-links {
+  display: none;
+  padding: 10px 16px 16px;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 8px;
+}
 
-  min-height: 40px;
-  padding: 8px 14px;
+.mobile-links a {
+  font-size: 12px;
+  padding: 8px 12px;
 
   border-radius: 9999px;
-
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-
   color: #67e8f9;
   background: rgba(34, 211, 238, 0.08);
-  border: 1px solid rgba(34, 211, 238, 0.25);
-
-  white-space: nowrap;
-
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  border: 1px solid rgba(34, 211, 238, 0.2);
 }
 
-.md\:hidden a:hover {
-  transform: translateY(-2px);
+/* =========================
+   RESPONSIVIDADE REAL
+========================= */
 
-  background: rgba(34, 211, 238, 0.16);
-  border-color: rgba(34, 211, 238, 0.45);
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.20),
-    0 0 18px rgba(34, 211, 238, 0.08);
-}
-
-/* ==========================================================
-   ACESSIBILIDADE
-   ========================================================== */
-
-nav a:focus-visible {
-  outline: 2px solid #22d3ee;
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-
-/* ==========================================================
-   RESPONSIVIDADE - DESKTOP GRANDE
-   ========================================================== */
-
-@media (min-width: 1280px) {
-  nav .md\:flex {
-    gap: 2rem;
-  }
-
-  #greeting {
-    font-size: 0.75rem;
-  }
-}
-
-/* ==========================================================
-   RESPONSIVIDADE - TABLET
-   ========================================================== */
-
-@media (max-width: 1279px) {
-  #greeting {
-    max-width: 220px;
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-  }
-
-  nav .md\:flex {
-    gap: 1.25rem;
-  }
-
-  nav .md\:flex a {
-    font-size: 0.82rem;
-  }
-}
-
-/* ==========================================================
-   RESPONSIVIDADE - TABLET MENOR
-   ========================================================== */
-
+/* tablet */
 @media (max-width: 1024px) {
-  #greeting {
-    display: none !important;
+  .greeting {
+    display: none;
   }
 
-  nav .max-w-6xl {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  nav .md\:flex {
-    gap: 1rem;
+  .nav-links {
+    gap: 16px;
   }
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - MOBILE
-   ========================================================== */
-
-@media (max-width: 767px) {
-  nav {
-    background: rgba(10, 22, 40, 0.84);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+/* mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
   }
 
-  nav .max-w-6xl {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem;
+  .mobile-links {
+    display: flex;
   }
 
-  /* Primeira linha */
-  nav .flex.items-center.justify-between {
+  .nav-container {
     justify-content: center;
   }
 
-  /* Logo centralizada */
-  nav a[href="/"] {
+  .logo {
     font-size: 1rem;
   }
-
-  /* Menu mobile */
-  .md\:hidden {
-    margin-top: 0.9rem;
-  }
-
-  .md\:hidden > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-
-  .md\:hidden a {
-    font-size: 0.72rem;
-    padding: 8px 12px;
-  }
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - MOBILE PEQUENO
-   ========================================================== */
-
+/* mobile pequeno */
 @media (max-width: 480px) {
-  body {
-    padding-top: 165px;
-  }
-
-  nav {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  nav a[href="/"] {
-    font-size: 0.95rem;
-  }
-
-  .md\:hidden a {
-    font-size: 0.68rem;
+  .mobile-links a {
+    font-size: 11px;
     padding: 7px 10px;
-    min-height: 36px;
-  }
-
-  .md\:hidden > div {
-    gap: 0.4rem;
-  }
-}
-
-/* ==========================================================
-   RESPONSIVIDADE - TELAS MUITO PEQUENAS
-   ========================================================== */
-
-@media (max-width: 360px) {
-  body {
-    padding-top: 180px;
-  }
-
-  nav a[href="/"] {
-    font-size: 0.88rem;
-  }
-
-  .md\:hidden a {
-    font-size: 0.65rem;
-    padding: 6px 9px;
   }
 }
 
@@ -1092,4 +885,104 @@ nav a:focus-visible {
 
 .delay-200 {
   animation-delay: 0.2s;
+}
+
+
+/* =========================
+   CONTACT SECTION LAYOUT
+========================= */
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* =========================
+   CONTACT CARD (PREMIUM)
+========================= */
+
+.contact-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: 14px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: var(--accent-2);
+  background: rgba(15, 30, 60, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  backdrop-filter: blur(12px);
+
+  transition: all 0.25s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho sutil interno */
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(103, 232, 249, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* hover state */
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(103, 232, 249, 0.45);
+  background: rgba(18, 43, 80, 0.55);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(103, 232, 249, 0.15);
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+/* ícone */
+.contact-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* texto */
+.contact-text {
+  white-space: nowrap;
+}
+
+/* foco acessível */
+.contact-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 480px) {
+  .contact-card {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
