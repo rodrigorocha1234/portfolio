@@ -49,6 +49,7 @@ span,
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;   /* Regular */
   line-height: 1.75;
+  text-align: justify;
 }
 
 /* ==========================================================
