@@ -56,12 +56,15 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="tcc-link text-sm mt-1 leading-relaxed break-words inline-block">
-                  <span class="font-semibold">
-                    Trabalho de Conclusão de Curso: orreçã
-                  </span>
-                  {{ item.tcc }}
 
-                  <!-- Indicador visual de link externo -->
+                  <span class="font-semibold tcc-title">
+                    Trabalho de Conclusão de Curso:
+                  </span>
+
+                  <span class="tcc-name">
+                    {{ item.tcc }}
+                  </span>
+
                   <span class="tcc-link-icon" aria-hidden="true">↗</span>
                 </a>
                 {% endif %}

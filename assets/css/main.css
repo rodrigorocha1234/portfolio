@@ -977,12 +977,8 @@ pre {
   }
 }
 
------
 /* ==========================================
-   LINK DO TCC (COM REALCE AO PASSAR O MOUSE)
-========================================== */
-/* ==========================================
-   LINK DO TCC (REALCE APENAS NO TEXTO)
+   TCC LINK - HOVER APENAS NO NOME DO TCC
 ========================================== */
 
 .tcc-link {
@@ -990,45 +986,46 @@ pre {
   align-items: center;
   gap: 6px;
 
-  margin-top: 4px;
-
-  color: var(--text-1); /* #cbd5e1 */
+  color: var(--text-1);
   text-decoration: none;
-
-  transition: color 0.25s ease;
 }
 
-/* Texto "Trabalho de Conclusão de Curso:" */
-.tcc-link span:first-child {
+/* título fixo (não muda nunca) */
+.tcc-title {
+  color: var(--text-1);
+}
+
+/* nome do TCC (é o único que muda) */
+.tcc-name {
   color: var(--text-1);
   transition: color 0.25s ease;
 }
 
-/* Ícone de link externo */
+/* ícone */
 .tcc-link-icon {
   font-size: 12px;
-  color: var(--accent); /* #67e8f9 */
+  color: var(--accent);
   opacity: 0.7;
   transition: all 0.25s ease;
 }
 
-/* Hover: muda apenas a cor do título */
-.tcc-link:hover span:first-child {
-  color: var(--accent); /* #67e8f9 */
+/* HOVER: só o nome do TCC fica azul */
+.tcc-link:hover .tcc-name {
+  color: var(--accent);
 }
 
-/* Mantém o nome do TCC com a cor original */
-.tcc-link:hover {
+/* mantém título intacto */
+.tcc-link:hover .tcc-title {
   color: var(--text-1);
 }
 
-/* Anima apenas o ícone */
+/* animação do ícone */
 .tcc-link:hover .tcc-link-icon {
   opacity: 1;
   transform: translate(2px, -2px);
 }
 
-/* Foco acessível */
+/* acessibilidade */
 .tcc-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
