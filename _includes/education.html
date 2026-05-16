@@ -20,15 +20,17 @@
             <!-- Conteúdo principal -->
             <div class="flex-1">
 
+              <!-- Nome do curso -->
               <h3 class="text-xl font-bold text-white">
                 {{ item.course }}
               </h3>
 
-              <!-- Instituição + logo -->
-              <div class="mt-2 flex items-center gap-3">
+              <!-- Instituição + logo + título do TCC -->
+              <div class="mt-2 flex items-start gap-3">
 
                 {% if item.logo %}
-                <div class="edu-logo {% if item.dark_fix %}dark-fix{% endif %}">
+                <!-- Logo com tamanho fixo, impedindo aumento -->
+                <div class="edu-logo {% if item.dark_fix %}dark-fix{% endif %} shrink-0 flex-none">
                   <img
                     src="{{ item.logo }}"
                     alt="{{ item.institution }} logo"
@@ -37,12 +39,35 @@
                 </div>
                 {% endif %}
 
-                <a href="{{ item.website }}"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="text-cyan-300 font-medium hover:text-cyan-200 transition underline underline-offset-4">
-                  {{ item.institution }}
+                <!-- Texto ao lado direito da imagem -->
+                <div class="flex flex-col min-w-0 flex-1">
+
+                  <!-- Nome da instituição -->
+                  <a href="{{ item.website }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-cyan-300 font-medium hover:text-cyan-200 transition underline underline-offset-4">
+                    {{ item.institution }}
+                  </a>
+
+                 <!-- Título do TCC abaixo da instituição -->
+                {% if item.tcc %}
+                <a href="{{ item.tcc_url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="tcc-link text-sm mt-1 leading-relaxed break-words inline-block">
+                  <span class="font-semibold">
+                    Trabalho de Conclusão de Curso:
+                  </span>
+                  {{ item.tcc }}
+
+                  <!-- Indicador visual de link externo -->
+                  <span class="tcc-link-icon" aria-hidden="true">↗</span>
                 </a>
+                {% endif %}
+
+
+                </div>
 
               </div>
 
