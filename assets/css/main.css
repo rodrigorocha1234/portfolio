@@ -285,12 +285,23 @@ pre {
 
 
 ---------------------
-.skills
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+  justify-items: center;
+}
+
+@media (max-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .skill-badge {
@@ -308,20 +319,19 @@ pre {
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.25);
 
-  transition: 0.2s;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .skill-badge:hover {
   background: rgba(34, 211, 238, 0.18);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .skill-icon {
   width: 16px;
   height: 16px;
 }
-
 
 .hero {
   background-image: url("/assets/img/header.jpeg");
