@@ -1,23 +1,8 @@
-<<<<<<< HEAD
 /* ==========================================================
    TIPOGRAFIA GLOBAL — UBUNTU
    ========================================================== */
 
 /* Import da fonte (caso ainda não esteja no <head>, pode deixar aqui no CSS) */
-<<<<<<< HEAD
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-=======
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
-/* Fonte padrão do site */
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
-=======
->>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
-body {
-  font-family: Ubuntu, sans-serif;
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 /* Fonte padrão do site */
@@ -38,53 +23,17 @@ h1,
   font-weight: 700;   /* Bold */
   letter-spacing: -0.02em;
   line-height: 1.2;
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
-}
-
-<<<<<<< HEAD
-/* ==========================================================
-<<<<<<< HEAD
-   TÍTULOS PRINCIPAIS (H1)
-   ========================================================== */
-h1,
-.text-title,
-.prose-custom h1 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 700;   /* Bold */
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-<<<<<<< HEAD
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-=======
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 }
 
 /* ==========================================================
    SUBTÍTULOS (H2, H3)
    ========================================================== */
-=======
-   SUBTÍTULOS (H2, H3)
-   ========================================================== */
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 h2,
 h3,
 .text-subtitle,
 .prose-custom h2,
 .prose-custom h3 {
   font-family: 'Ubuntu', sans-serif;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-=======
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
-=======
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
   font-weight: 500;   /* Medium */
   letter-spacing: -0.01em;
   line-height: 1.35;
@@ -95,27 +44,11 @@ h3,
    ========================================================== */
 p,
 li,
-<<<<<<< HEAD
-<<<<<<< HEAD
-ul,
-span,
-.prose-custom p,
-.prose-custom li {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-=======
-=======
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
 span,
 .prose-custom p,
 .prose-custom li {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;   /* Regular */
-<<<<<<< HEAD
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
-=======
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
   line-height: 1.75;
 }
 
@@ -162,21 +95,6 @@ code,
 pre {
   font-family: 'Ubuntu Mono', 'Courier New', monospace;
 }
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
-=======
->>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
-=======
-  padding-top: 90px;
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-top: 150px;
-  }
-}
->>>>>>> parent of a4663f0 (Correção css)
 
 .skills-grid {
   display: grid;
@@ -302,7 +220,6 @@ pre {
   font-weight: 800;
   color: white;
   margin: 32px 0 16px;
-  font-family: "Ubuntu Bold", sans-serif;
 }
 
 .prose-custom h2 {
@@ -312,7 +229,6 @@ pre {
   margin: 28px 0 12px;
   border-left: 3px solid #22d3ee;
   padding-left: 10px;
-  font-family: "Ubuntu light", sans-serif;
 }
 
 .prose-custom h3 {
@@ -326,8 +242,6 @@ pre {
 .prose-custom p {
   margin: 14px 0;
   color: #cbd5e1;
-  text-align: justify;
-  font-family: "Ubuntu light", sans-serif;
 }
 
 /* LISTS */
@@ -624,22 +538,6 @@ skills
 .tag:hover {
   background: rgba(56, 189, 248, 0.18);
   transform: translateY(-1px);
-}
-
-/* ==========================================================
-   NAVBAR TOTALMENTE RESPONSIVA
-   ========================================================== */
-
-/* Espaçamento global para compensar navbar fixa */
-body {
-  padding-top: 90px;
-}
-
-/* Altura maior no mobile (duas linhas) */
-@media (max-width: 767px) {
-  body {
-    padding-top: 150px;
-  }
 }
 
 /* Navbar principal */
@@ -990,6 +888,7 @@ nav a:focus-visible {
     padding: 6px 9px;
   }
 }
+
 /* ==========================================================
    PROJECT CARDS (SEM ANIMAÇÃO DE SCROLL)
    ========================================================== */
