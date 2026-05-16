@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ==========================================================
    TIPOGRAFIA GLOBAL — UBUNTU
    ========================================================== */
@@ -10,13 +11,13 @@
 
 /* Fonte padrão do site */
 >>>>>>> parent of d5d5d55 (Refactor typography styles and improve font variable usage)
+=======
+>>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
 body {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 400;   /* Regular */
-  line-height: 1.6;
-  color: var(--text-1);
+  font-family: Ubuntu, sans-serif;
 }
 
+<<<<<<< HEAD
 /* ==========================================================
    TÍTULOS PRINCIPAIS (H1)
    ========================================================== */
@@ -123,6 +124,8 @@ code,
 pre {
   font-family: 'Ubuntu Mono', 'Courier New', monospace;
 }
+=======
+>>>>>>> parent of 3b7e58f (Update font-family to use quotes for Ubuntu)
 
 .skills-grid {
   display: grid;
