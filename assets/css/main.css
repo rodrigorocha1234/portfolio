@@ -1059,3 +1059,101 @@ pre {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* =========================
+   TABLES - THEME INTEGRATION
+========================= */
+
+/* =========================
+   TABLES - PREMIUM GLASS THEME
+========================= */
+
+.prose-custom table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+
+  font-size: 14.5px;
+  color: var(--text-1);
+
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER STICKY */
+.prose-custom thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  padding: 14px 16px;
+  text-align: left;
+
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  color: var(--accent);
+
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border-strong);
+}
+
+/* CELLS */
+.prose-custom tbody td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-1);
+  transition: all 0.2s ease;
+}
+
+/* ZEBRA */
+.prose-custom tbody tr:nth-child(even) {
+  background: rgba(15, 30, 60, 0.22);
+}
+
+/* HOVER LINHA (FOCO TOTAL) */
+.prose-custom tbody tr:hover {
+  background: rgba(56, 189, 248, 0.10);
+  transform: scale(1.002);
+}
+
+/* HOVER POR COLUNA (efeito leve de leitura) */
+.prose-custom tbody td:hover {
+  color: var(--accent-2);
+}
+
+/* PRIMEIRA COLUNA DESTACADA (opcional forte UX) */
+.prose-custom tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-0);
+}
+
+/* BORDA ARREDONDADA VISUAL */
+.prose-custom table tr:first-child th:first-child {
+  border-top-left-radius: 14px;
+}
+
+.prose-custom table tr:first-child th:last-child {
+  border-top-right-radius: 14px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .prose-custom table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
