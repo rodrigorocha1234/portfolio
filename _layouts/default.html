@@ -49,12 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
       obs.unobserve(entry.target);
     });
   }, {
-    threshold: 0.15
+    rootMargin: "0px 0px -8% 0px",
+    threshold: 0.05
   });
 
   cards.forEach((card, index) => {
-    // stagger (efeito cascata elegante)
-    card.style.transitionDelay = `${index * 120}ms`;
+    /* Delay limitado para evitar lentidão nos últimos cards.
+       Máximo de 6 passos (0ms até 300ms). */
+    const delay = Math.min(index, 6) * 50;
+    card.style.transitionDelay = `${delay}ms`;
 
     observer.observe(card);
   });
