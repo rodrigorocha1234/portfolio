@@ -117,11 +117,13 @@ O teste de Friedman é um teste não paramétrico para medidas repetidas, usado 
 O teste de Nemenyi é um teste pós-hoc não paramétrico, usado após o teste de Friedman para comparar pares de grupos e identificar quais tratamentos diferem.
 ``
 
-![Over Under](https://raw.githubusercontent.com/rodrigorocha1/web_scraping_mh_fipe/refs/heads/master/fig/over_under_random_forest.png)
+
 
 
 
 O gráfico abaixo representa o resultado final para a escolha do modelo. Com base no modelo, random florest e rede neural são estátiticamente iguais, mas diferêntes das quatro regressões lineares. Regressão svr (SVM), teve o pior desempenho entre os modelos.
+
+![Over Under](https://github.com/rodrigorocha1234/web_scraping_mh_fipe/blob/master/fig/cd_diagram_scikit_posthocs.png?raw=true)
 
 ### 4.6 Demonstração  em Produção
     • O modelo final foi containerizado com Docker, permitindo fácil implantação em qualquer ambiente.
