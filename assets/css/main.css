@@ -305,27 +305,45 @@ pre {
 }
 
 .skill-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 
-  padding: 8px 14px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+
+  padding: 10px 18px;
   border-radius: 9999px;
 
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 
   color: #67e8f9;
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.25);
 
-  transition: all 0.2s ease;
-  white-space: nowrap;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
+/* Hover sem cortar o elemento */
 .skill-badge:hover {
-  background: rgba(34, 211, 238, 0.18);
+  z-index: 20;
+
+  /* Apenas desloca para cima; evita scale que causa corte lateral */
   transform: translateY(-2px);
+
+  background: rgba(34, 211, 238, 0.18);
+  border-color: rgba(34, 211, 238, 0.45);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(34, 211, 238, 0.08);
 }
 
 .skill-icon {
@@ -333,6 +351,7 @@ pre {
   height: 16px;
   object-fit: contain;
 }
+
 -----
 .hero {
   background-image: url("/assets/img/header.jpeg");
@@ -1179,7 +1198,10 @@ pre {
   max-width: 1200px;
   margin: 0 auto;
 
-  /* fade nas bordas */
+  /* Espaço interno para evitar corte no hover */
+  padding: 8px 0;
+
+  /* Fade nas bordas */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -1202,17 +1224,18 @@ pre {
   gap: 14px;
   width: max-content;
 
-  /* animação infinita */
+  /* Permite que o badge cresça no hover sem ser cortado */
+  padding: 6px 0;
+
   animation: skills-scroll 35s linear infinite;
 }
 
-
-/* pausa ao passar o mouse */
+/* Pausa a animação no hover */
 .skills-marquee:hover .skills-track {
   animation-play-state: paused;
 }
 
-/* movimento contínuo da esquerda para a direita */
+/* Movimento contínuo */
 @keyframes skills-scroll {
   from {
     transform: translateX(-50%);
@@ -1221,6 +1244,7 @@ pre {
     transform: translateX(0);
   }
 }
+
 
 
 @media (max-width: 768px) {
