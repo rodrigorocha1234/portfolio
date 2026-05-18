@@ -1,20 +1,28 @@
-<section id="skills" class="py-28 px-6 text-center bg-gradient-to-b from-[#070f1c] via-[#0a1a33] to-[#070f1c] relative overflow-hidden">
+<section id="skills"
+  class="py-28 px-6 text-center bg-gradient-to-b from-[#070f1c] via-[#0a1a33] to-[#070f1c] relative overflow-hidden">
 
-  <h2 class="text-3xl font-bold mb-10 text-white tracking-wide">
+  <h2 class="text-3xl font-bold mb-12 text-white tracking-wide relative z-10">
     Habilidades & Tecnologias
   </h2>
 
-  <div class="skills-grid max-w-6xl mx-auto px-4">
-
-    {% for skill in site.skills %}
-
+  <!-- Container com máscara para esconder itens fora da tela -->
+  <div class="skills-marquee">
+    <div class="skills-track">
+      <!-- Primeira cópia -->
+      {% for skill in site.skills %}
       <span class="skill-badge">
-        <img src="{{ skill.icon }}" class="skill-icon">
+        <img src="{{ skill.icon }}" class="skill-icon" alt="{{ skill.name }}">
         {{ skill.name }}
       </span>
+      {% endfor %}
 
-    {% endfor %}
-
+      <!-- Segunda cópia (necessária para loop infinito) -->
+      {% for skill in site.skills %}
+      <span class="skill-badge">
+        <img src="{{ skill.icon }}" class="skill-icon" alt="{{ skill.name }}">
+        {{ skill.name }}
+      </span>
+      {% endfor %}
+    </div>
   </div>
-
 </section>

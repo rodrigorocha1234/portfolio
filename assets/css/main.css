@@ -104,32 +104,32 @@ pre {
 }
 
 .skill-badge {
-  width: 100%;
-  max-width: 140px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
 
-  padding: 8px 10px;
+  flex-shrink: 0;
+  padding: 10px 18px;
   border-radius: 9999px;
 
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
 
   color: #67e8f9;
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.25);
 
-  transition: all 0.2s ease;
-  white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
 .skill-badge:hover {
-  transform: translateY(-2px);
   background: rgba(34, 211, 238, 0.18);
-  border-color: rgba(34, 211, 238, 0.5);
+  border-color: rgba(34, 211, 238, 0.45);
+  transform: translateY(-2px);
 }
+
+
 .project-card img {
   height: 210px; /* ajuste aqui */
   width: 100%;
@@ -331,6 +331,7 @@ pre {
 .skill-icon {
   width: 16px;
   height: 16px;
+  object-fit: contain;
 }
 -----
 .hero {
@@ -1164,5 +1165,83 @@ pre {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+  }
+}
+
+/* ==========================================================
+   SKILLS MARQUEE (ANIMAÇÃO CONTÍNUA)
+   ========================================================== */
+
+.skills-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* fade nas bordas */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.skills-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+
+  /* animação infinita */
+  animation: skills-scroll 35s linear infinite;
+}
+
+
+/* pausa ao passar o mouse */
+.skills-marquee:hover .skills-track {
+  animation-play-state: paused;
+}
+
+/* movimento contínuo da esquerda para a direita */
+@keyframes skills-scroll {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .skills-track {
+    gap: 10px;
+    animation-duration: 25s;
+  }
+
+  .skill-badge {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .skill-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-track {
+    animation: none;
   }
 }
