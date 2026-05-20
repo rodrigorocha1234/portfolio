@@ -1272,3 +1272,262 @@ pre {
     animation: none;
   }
 }
+
+/* ==========================================================
+   EXPERIENCE SECTION - TERMINAL STYLE
+   ========================================================== */
+
+.terminal-card {
+  background: rgba(6, 17, 35, 0.92);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(103, 232, 249, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.terminal-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(103, 232, 249, 0.35);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(34, 211, 238, 0.08);
+}
+
+/* --------------------------
+   HEADER
+-------------------------- */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 18px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 30, 60, 0.95),
+    rgba(9, 20, 40, 0.95)
+  );
+
+  border-bottom: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.terminal-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-btn.red {
+  background: #ff5f56;
+}
+
+.terminal-btn.yellow {
+  background: #ffbd2e;
+}
+
+.terminal-btn.green {
+  background: #27c93f;
+}
+
+.terminal-title {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 13px;
+  color: #7dd3fc;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------
+   BODY
+-------------------------- */
+.terminal-body {
+  padding: 24px 28px;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+/* Prompt */
+.terminal-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.terminal-user {
+  color: #67e8f9;
+  font-weight: 700;
+}
+
+.terminal-separator {
+  color: #94a3b8;
+}
+
+.terminal-path {
+  color: #60a5fa;
+}
+
+.terminal-command {
+  color: #e2e8f0;
+}
+
+.terminal-output {
+  padding-left: 2px;
+}
+
+/* Labels */
+.terminal-label {
+  color: #67e8f9;
+  font-weight: 700;
+}
+
+/* Valores */
+.terminal-value {
+  color: #ffffff;
+}
+
+.terminal-link {
+  color: #7dd3fc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.terminal-link:hover {
+  color: #67e8f9;
+  text-shadow: 0 0 12px rgba(103, 232, 249, 0.35);
+}
+
+/* Período */
+.terminal-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 3px 10px;
+  border-radius: 9999px;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Lista */
+.terminal-list {
+  margin: 0;
+  padding-left: 22px;
+  color: #cbd5e1;
+}
+
+.terminal-list li {
+  margin: 6px 0;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.terminal-list li::marker {
+  color: #67e8f9;
+}
+
+/* Tags */
+.terminal-tag {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 10px;
+  border-radius: 9999px;
+
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Ubuntu", sans-serif;
+
+  color: #7dd3fc;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+
+  transition: all 0.2s ease;
+}
+
+.terminal-tag:hover {
+  background: rgba(56, 189, 248, 0.16);
+  transform: translateY(-1px);
+}
+
+/* Cursor piscando */
+.terminal-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 18px;
+  background: #67e8f9;
+  margin-left: 2px;
+  border-radius: 2px;
+
+  animation: terminal-blink 1s steps(1) infinite;
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.45);
+}
+
+@keyframes terminal-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --------------------------
+   RESPONSIVO
+-------------------------- */
+@media (max-width: 768px) {
+  .terminal-body {
+    padding: 20px;
+    font-size: 13px;
+  }
+
+  .terminal-title {
+    display: none;
+  }
+
+  .terminal-line {
+    gap: 2px;
+  }
+
+  .terminal-period {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-body {
+    padding: 18px;
+    font-size: 12.5px;
+  }
+
+  .terminal-list {
+    padding-left: 18px;
+  }
+
+  .terminal-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}

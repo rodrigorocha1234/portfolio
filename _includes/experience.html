@@ -1,8 +1,11 @@
-<section id="experience" class="py-28 px-6 bg-gradient-to-b from-[#081424] via-[#0b1f3a] to-[#081424] relative overflow-hidden">
+<section id="experience"
+  class="py-28 px-6 bg-gradient-to-b from-[#081424] via-[#0b1f3a] to-[#081424] relative overflow-hidden">
 
   <!-- glow decorativo -->
   <div class="absolute inset-0 opacity-20 pointer-events-none">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[140px] rounded-full"></div>
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[140px] rounded-full">
+    </div>
   </div>
 
   <div class="max-w-5xl mx-auto relative">
@@ -11,75 +14,106 @@
       Experiência Profissional
     </h2>
 
-    <div class="relative border-l border-sky-500/20 pl-8 space-y-12">
+    <div class="space-y-8">
 
       {% for exp in site.data.experience %}
 
-      <!-- dot da timeline -->
-      <div class="absolute -left-[9px] mt-2 w-4 h-4 rounded-full bg-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.6)]"></div>
+      <div class="terminal-card">
 
-      <div class="experience-card-premium group">
+        <!-- Barra superior estilo terminal -->
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn red"></span>
+            <span class="terminal-btn yellow"></span>
+            <span class="terminal-btn green"></span>
+          </div>
 
-        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-
-          <h3 class="text-white font-semibold text-xl">
-            {{ exp.role }} · 
-            <a href="{{ site.data.companies[exp.company].url }}"
-               target="_blank"
-               class="text-sky-300 hover:text-cyan-300 transition-colors">
-
-              {{ site.data.companies[exp.company].name }}
-
-            </a>
-          </h3>
-
-          <span
-          class="inline-flex items-center gap-2 px-4 py-1.5
-                text-sky-300 text-sm font-semibold
-                rounded-full
-                bg-[#062b4d]
-                border border-[#0ea5e9]
-                shadow-[0_0_18px_rgba(14,165,233,0.18)]">
-          <span
-            class="w-2.5 h-2.5 rounded-full
-                  bg-[#38bdf8]
-                  shadow-[0_0_10px_rgba(56,189,248,0.65)]
-                  flex-shrink-0">
-          </span>
-          {{ exp.period }}
-        </span>
-
+          <div class="terminal-title">
+            {{ exp.role | slugify }}.sh
+          </div>
         </div>
 
-        <!-- DESCRIÇÃO COMO LISTA -->
-        <ul class="text-slate-300 mt-3 leading-relaxed space-y-2 list-disc pl-5">
+        <!-- Conteúdo -->
+        <div class="terminal-body">
 
-          {% assign clean_description = exp.description | replace: "- ", "\n- " %}
-          {% assign lines = clean_description | split: "\n" %}
+          <div class="terminal-line">
+            <span class="terminal-user">rodrigo@portfolio</span>
+            <span class="terminal-separator">:</span>
+            <span class="terminal-path">~/experience</span>
+            <span class="terminal-separator">$</span>
+            <span class="terminal-command">
+              cat {{ exp.company | slugify }}.txt
+            </span>
+          </div>
 
-          {% for line in lines %}
-            {% assign item = line | strip %}
+          <div class="terminal-output mt-4 space-y-4">
 
-            {% if item != "" %}
-              <li>{{ item | remove_first: "- " }}</li>
-            {% endif %}
-          {% endfor %}
+            <!-- Cargo -->
+            <div>
+              <span class="terminal-label">cargo:</span>
+              <span class="terminal-value">{{ exp.role }}</span>
+            </div>
 
-        </ul>
+            <!-- Empresa -->
+            <div>
+              <span class="terminal-label">empresa:</span>
+              <a href="{{ site.data.companies[exp.company].url }}"
+                 target="_blank"
+                 class="terminal-link">
+                {{ site.data.companies[exp.company].name }}
+              </a>
+            </div>
 
-        <div class="flex flex-wrap gap-2 mt-4">
+            <!-- Período -->
+            <div>
+              <span class="terminal-label">período:</span>
+              <span class="terminal-period">{{ exp.period }}</span>
+            </div>
 
-          {% for tech in exp.tech %}
-            <span class="project-tag-premium">{{ tech }}</span>
-          {% endfor %}
+            <!-- Descrição -->
+            <div>
+              <div class="terminal-label mb-2">responsabilidades:</div>
+
+              <ul class="terminal-list">
+                {% assign clean_description = exp.description | replace: "- ", "\n- " %}
+                {% assign lines = clean_description | split: "\n" %}
+
+                {% for line in lines %}
+                  {% assign item = line | strip %}
+                  {% if item != "" %}
+                    <li>{{ item | remove_first: "- " }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+
+            <!-- Tecnologias -->
+            <div>
+              <div class="terminal-label mb-3">stack:</div>
+
+              <div class="flex flex-wrap gap-2">
+                {% for tech in exp.tech %}
+                  <span class="terminal-tag">{{ tech }}</span>
+                {% endfor %}
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Prompt final -->
+          <div class="terminal-line mt-6">
+            <span class="terminal-user">rodrigo@portfolio</span>
+            <span class="terminal-separator">:</span>
+            <span class="terminal-path">~/experience</span>
+            <span class="terminal-separator">$</span>
+            <span class="terminal-cursor"></span>
+          </div>
 
         </div>
-
       </div>
 
       {% endfor %}
 
     </div>
-
   </div>
 </section>
