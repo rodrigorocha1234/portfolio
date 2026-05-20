@@ -19,10 +19,10 @@ skills:
   - name: Python
     icon: https://devicon-website.vercel.app/api/python/plain.svg?color=%2367E8F9
   
-  - name: Airflow
+  - name: Apache Airflow
     icon: https://cdn.simpleicons.org/apacheairflow/67e8f9
 
-  - name: PDI
+  - name: Pentaho Data Integration
     icon: /assets/devicons/pdi.png
 
   - name: MySQL
@@ -43,10 +43,10 @@ skills:
   - name: Docker
     icon: https://cdn.simpleicons.org/docker/67e8f9
 
-  - name: Kafka
+  - name: Apache Kafka
     icon: https://cdn.simpleicons.org/apachekafka/67e8f9
 
-  - name: DBT
+  - name: DBT (Data Build Tool)
     icon: /assets/devicons/dbt.png
 
   - name: Linux
