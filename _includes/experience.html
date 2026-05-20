@@ -1,7 +1,7 @@
 <section id="experience"
   class="py-28 px-6 bg-gradient-to-b from-[#081424] via-[#0b1f3a] to-[#081424] relative overflow-hidden">
 
-  <!-- glow decorativo -->
+  <!-- Glow decorativo -->
   <div class="absolute inset-0 opacity-20 pointer-events-none">
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cyan-500 blur-[140px] rounded-full">
@@ -18,99 +18,99 @@
 
       {% for exp in site.data.experience %}
 
-      <div class="terminal-card">
+      <article class="terminal-card">
 
-        <!-- Barra superior estilo terminal -->
+        <!-- Barra superior -->
         <div class="terminal-header">
-          <div class="terminal-buttons">
-            <span class="terminal-btn red"></span>
-            <span class="terminal-btn yellow"></span>
-            <span class="terminal-btn green"></span>
+          <div class="terminal-controls">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
           </div>
 
-          <div class="terminal-title">
-            {{ exp.role | slugify }}.sh
-          </div>
+          <span class="terminal-title">
+            {{ exp.role | downcase | replace: ' ', '_' }}.sh
+          </span>
         </div>
 
         <!-- Conteúdo -->
         <div class="terminal-body">
 
+          <!-- Prompt -->
           <div class="terminal-line">
             <span class="terminal-user">rodrigo@portfolio</span>
             <span class="terminal-separator">:</span>
             <span class="terminal-path">~/experience</span>
-            <span class="terminal-separator">$</span>
+            <span class="terminal-dollar">$</span>
             <span class="terminal-command">
-              cat {{ exp.company | slugify }}.txt
+              cat {{ exp.company | downcase | replace: ' ', '_' }}.log
             </span>
           </div>
 
-          <div class="terminal-output mt-4 space-y-4">
+          <!-- Cargo -->
+          <div class="terminal-output mt-3">
+            <span class="terminal-key">cargo</span>:
+            <span class="terminal-value">{{ exp.role }}</span>
+          </div>
 
-            <!-- Cargo -->
-            <div>
-              <span class="terminal-label">cargo:</span>
-              <span class="terminal-value">{{ exp.role }}</span>
-            </div>
+          <!-- Empresa -->
+          <div class="terminal-output">
+            <span class="terminal-key">empresa</span>:
+            <a href="{{ site.data.companies[exp.company].url }}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="terminal-link">
+              {{ site.data.companies[exp.company].name }}
+            </a>
+          </div>
 
-            <!-- Empresa -->
-            <div>
-              <span class="terminal-label">empresa:</span>
-              <a href="{{ site.data.companies[exp.company].url }}"
-                 target="_blank"
-                 class="terminal-link">
-                {{ site.data.companies[exp.company].name }}
-              </a>
-            </div>
+          <!-- Período -->
+          <div class="terminal-output">
+            <span class="terminal-key">periodo</span>:
+            <span class="terminal-period">{{ exp.period }}</span>
+          </div>
 
-            <!-- Período -->
-            <div>
-              <span class="terminal-label">período:</span>
-              <span class="terminal-period">{{ exp.period }}</span>
-            </div>
+          <!-- Descrição -->
+          <div class="terminal-output mt-4">
+            <span class="terminal-key">atividades</span>:
+          </div>
 
-            <!-- Descrição -->
-            <div>
-              <div class="terminal-label mb-2">responsabilidades:</div>
+          <div class="terminal-list">
+            {% assign clean_description = exp.description | replace: "- ", "\n- " %}
+            {% assign lines = clean_description | split: "\n" %}
 
-              <ul class="terminal-list">
-                {% assign clean_description = exp.description | replace: "- ", "\n- " %}
-                {% assign lines = clean_description | split: "\n" %}
+            {% for line in lines %}
+              {% assign item = line | strip %}
+              {% if item != "" %}
+                <div class="terminal-list-item">
+                  <span class="terminal-bullet">▸</span>
+                  <span>{{ item | remove_first: "- " }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
 
-                {% for line in lines %}
-                  {% assign item = line | strip %}
-                  {% if item != "" %}
-                    <li>{{ item | remove_first: "- " }}</li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
+          <!-- Tecnologias -->
+          <div class="terminal-output mt-5">
+            <span class="terminal-key">stack</span>:
+          </div>
 
-            <!-- Tecnologias -->
-            <div>
-              <div class="terminal-label mb-3">stack:</div>
-
-              <div class="flex flex-wrap gap-2">
-                {% for tech in exp.tech %}
-                  <span class="terminal-tag">{{ tech }}</span>
-                {% endfor %}
-              </div>
-            </div>
-
+          <div class="flex flex-wrap gap-2 mt-3">
+            {% for tech in exp.tech %}
+              <span class="terminal-tag">{{ tech }}</span>
+            {% endfor %}
           </div>
 
           <!-- Prompt final -->
-          <div class="terminal-line mt-6">
+          <div class="terminal-line terminal-final mt-6">
             <span class="terminal-user">rodrigo@portfolio</span>
             <span class="terminal-separator">:</span>
             <span class="terminal-path">~/experience</span>
-            <span class="terminal-separator">$</span>
-            <span class="terminal-cursor"></span>
+            <span class="terminal-dollar blink">$</span>
           </div>
 
         </div>
-      </div>
+      </article>
 
       {% endfor %}
 
