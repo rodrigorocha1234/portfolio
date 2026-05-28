@@ -8,7 +8,7 @@ tags: ['python', 'docker', 'beautifulsoup', 'grafana', 'prometheus', 'celery']
 ---
 ## Objetivo 
 
-Este projeto tem como objetivo apresentar uma arquitetura distribuída de web scraping baseada em Python e Celery, capaz de executar coleta paralela de conteúdo dos sites rss e dos portais do G1, com gerenciamento assíncrono de tarefas, escalabilidade horizontal, tolerância a falhas e monitoramento operacional.
+Este projeto tem como objetivo apresentar uma arquitetura distribuída de web scraping baseada em Python e Celery, capaz de executar coleta paralela de conteúdo dos sites rss e dos portais do G1 **(Ribeirão Preto e Pará)**, com gerenciamento assíncrono de tarefas, escalabilidade horizontal, tolerância a falhas e monitoramento operacional.
 
 
 ## Tecnologias Utilizadas
