@@ -25,6 +25,9 @@ skills:
   - name: Pentaho Data Integration
     icon: /assets/devicons/pdi.png
 
+  - name: Celery
+    icon: /assets/devicons/celery.png
+
   - name: MySQL
     icon: https://devicon-website.vercel.app/api/mysql/plain.svg?color=%2367E8F9
   

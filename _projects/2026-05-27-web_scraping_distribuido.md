@@ -1,216 +1,167 @@
 ---
 layout: project
-title: "Mapa Semântico de Tendências em Games"
-date: 2026-03-10
-image: /assets/img/posts/radar_semantico_jogos/thumb.png
-description: "Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam"
-tags: ['deep_learning', 'regressao', 'python']
+title: "Propostra de construção de web scraping  distribuido dos sites do g1."
+date: 2026-05-27
+image: /assets/img/posts/web_scraping_rss_distribuido/thumb.png
+description: "Construir um web scraping distribuido e monitorar"
+tags: ['python', 'docker', 'beautifulsoup', 'grafana', 'prometheus', 'celery']
 ---
-
 ## Objetivo 
 
-Monitorar e analisar comentários de vídeos de jogos no YouTube e reviews na Steam, transformando dados não estruturados em insights sobre reputação, sentimentos e tendências, com visualização via mapa auto-organizável (SOM), para identificar  padrões de opinião, sentimentos e tendências em relação a diferentes jogos e gêneros.. O projeto inclui rastreamento de modelos via MLflow 
+Este projeto tem como objetivo apresentar uma arquitetura distribuída de web scraping baseada em Python e Celery, capaz de executar coleta paralela de conteúdo dos sites rss e dos portais do G1, com gerenciamento assíncrono de tarefas, escalabilidade horizontal, tolerância a falhas e monitoramento operacional.
+
 
 ## Tecnologias Utilizadas
 
-- Python  
-- YouTube Data API v3  
-- Steam Web API  
-- SpaCy (NLP)  
-- MiniSom Tensorflow (mapa auto-organizável)  
-- MLflow (tracking de modelos)  
-- Docker + Docker Compose (ambiente isolado)  
-- PostgreSQL / Minio (armazenamento de dados)  
-- pandas, numpy (manipulação de dados)
+- 🐍 Python 3.11
+- ⚙️ Celery 5.6.3
+- 🐳 Docker Compose
+- 🔴 Redis
+- 📈 Prometheus
+- 📊 Grafana
+ 
+---
+
+# Arquitetura da Solução
+
+## Diagrama de atividade
+
+![qe_te](https://raw.githubusercontent.com/rodrigorocha1234/processamento_distribuido_rss/refs/heads/main/img/diagrama_atividade.png)
+
+
+Com base no diagrama de atividade acima, ele apresenta o pipeline de extração de noticia em 5 etapas:
+
+**Orquestração e agendamento “Scheduler”:** Aqui foi definia o ínicio da extração de dados com as urls rss de forma paralela, ou seja, se usarmos duas urls rss, irá ser criada 2 tarefas no total, uma para cada url.
+
+**Leitura dos Feeds Rss:**  Para cada url rss criada para tarefa anteriormente, irá ser obtido uma média de total 100 urls de noticias do site do g1, e de cada url do g1, é criada uma tarefa para cada url, além de registrar as métricas no prometheus.
+
+**Ingestão, Deduplicação e extração de conteúdo:** Aqui e feito o acesso de cada url do g1 e salvar o texto da noticia em arquivo, com controle de duplicidade, ou seja, é verificada se a url do g1 já gerou um arquivo.
+
+
+## Diagrama de classe
+![qe_te](https://raw.githubusercontent.com/rodrigorocha1234/processamento_distribuido_rss/refs/heads/main/img/diagrama_classes.png)
+
+### Organização dos Serviços
+
+O diagrama acima mostra a organização de cada tipo de serviço. Foi organizado em serviçoes de banco de dados e serviço de gravação de arquivo. Cada serviço pode ser substituido de forma flexivel de forma a não interferir de funcionamento do serviço de extração de dados.
+
+
+### 1 – Pacote Modelo
+
+É a base de dados que fluem pelo sistemas.
+
+- **Noticias:** Age como a entidade principal do sistema. Ela contém id, título, subtítulo, autor, data e texto.
+- **Dados rss:** Um dicionário tipados para manipulação dos formatos específicos dos feeds RSS.
+
+
+
+### 2 - Pacote servicos.extracao_sites (Camada de Extração)
+
+- **IWebScraping (Protocol):** Define o contrato de extração do web scraping, ou seja, os métodos que o web scraping irá fazer.
+
+- **WebScrapingBs4 (ABC):** Uma classe abstrata base que embute o motor do BeautifulSoup4.
+
+- **Implementações Concretas (WebScrapingRss e WebScrapingG1):** As classes herdam de WebScrapingBs4, permitindo criar uma lógica diferente para classe de implementação concreta. Ela possui uma dependência com a classe de tratamento.
+
+
+### 3 - Pacote servicos.banco
+
+Interfaces (**Operacao** e **IdbConfig**): Aqui é aplicado Protocol para garantir a inversão de dependência. O sistema não depende de um banco de dados específico, mas do contrato.
+
+- **Implementação Redis (OperacaoRedis e DbConfigRedis):** O Redis está sendo usado aqui, e métodos como monitorar_fila sugerem que este pipeline pode estar trabalhando de forma assíncrona ou distribuída.
+
+
+
+### 4 - Pacote servicos.guardar_dados (Camada de Exportação)
+
+- **Arquivo (ABC) e ArquivoDOCX:** Um módulo para exportar as entidades Noticia para documentos físicos (Word), respeitando o princípio de Aberto/Fechado (Open/Closed Principle).
+
+
+
+### 5 - Pacote servicos.tratamento (Camada de Transformação)
+
+- **Tratamento:** Uma classe utilitária, aparentemente com um método estático ou de classe limpar_descricao(textos: ResultSet). Ela isola a lógica de limpeza de strings (como remoção de tags HTML residuais ou caracteres de escape) da lógica de extração.
 
 ---
 
-## Arquitetura da Solução
-
-### Coleta de Dados
-
-Para inicio do projeto, foi organizado a coleta dos dados dos textos do reviews dos jogos (Tabela abaixo), usando o endpoint: https://store.steampowered.com/appreviews/10?json=1&filter=recent&cursor=*&review_type=all&purchase_type=all&num_per_page=100&day_range=365 r  a api de comentários de vídeo do youtube:
-youtube/v3/commentThreads
-youtube/v3/comments
+## Diagrama de arquitetura
 
 
-usando o padrão de projetos cadeia de responsabilidade e o guardando do json em um bucket, com Minio.
-
-Tabela com os jogos que serão analisados:
-
-| AppID | Nome Técnico (Slug) | Franquia / Categoria |
-|------|------|------|
-| 1631270 | star_rupture | Star Rupture |
-| 275850 | no_mans_sky | No Man’s Sky |
-| 392160 | x4_foundations | X4 |
-| 526870 | satisfactory | Satisfactory |
-| 1284190 | planet_crafter | The Planet Crafter |
-| 4078590 | the_planet_crafter_toxicity | The Planet Crafter (DLC) |
-| 3142540 | the_planet_crafter_planet_humble | The Planet Crafter (DLC) |
-| 359320 | elite_dangerous | Elite Dangerous |
-| 1336350 | elite_dangerous_odissey | Elite Dangerous (DLC) |
-| 227300 | euro_truck_simulator | Euro Truck Simulator 2 |
-| 2604420 | euro_truck_simulator_grecia | ETS2 (DLC) |
-| 1209460 | euro_truck_simulator_iberia | ETS2 (DLC) |
-| 558244 | euro_truck_simulator_italia | ETS2 (DLC) |
-| 925580 | euro_truck_simulator_beyound_the_baltic_sea | ETS2 (DLC) |
-| 1056760 | euro_truck_simulator_road_to_the_black_sea | ETS2 (DLC) |
-| 531130 | euro_truck_simulator_vive_le_france | ETS2 (DLC) |
-| 304212 | euro_truck_simulator_scandinaavia | ETS2 (DLC) |
-| 227310 | euro_truck_simulator_going_east | ETS2 (DLC) |
-| 2780810 | euro_truck_simulator_nordic_horizons | ETS2 (DLC) |
-| 244850 | space_engineers | Space Engineers |
-| 255710 | cities_skylines | Cities Skylines |
-| 264710 | subnautica | Subnautica |
-| 848450 | subnautica_bellow_zero | Subnautica (Below Zero) |
-| 949230 | cities_skylines_dois | Cities Skylines II |
-| 105600 | terraria | Terraria |
-| 815370 | green_hell | Green Hell |
-| 396750 | everspace | Everspace |
-| 1128920 | everspace_dois | Everspace 2 |
-| 281990 | stellaris | Stellaris |
-| 1363080 | manor_lords | Manor Lords |
-| 108600 | project_zomboid | Project Zomboid |
-| 1149460 | icarus | Icarus |
-| 361420 | astonomer | Astroneer |
-| 1172710 | dune_awakening | Dune Awakening |
-| 2570210 | eden_crafters | Eden Crafters |
-| 1203620 | enshrouded | Enshrouded |
-| 1062090 | timberborn | Timberborn |
-| 1465470 | the_Crust | The Crust |
-| 1783560 | the_last_caretaker | The Last Caretaker |
-| 427520 | factorio | Factorio |
-| 544550 | stationeers | Stationeers |
-| 2139460 | once_human | Once Human |
-| 1466860 | age_of_empires_iv | Age of Empires IV |
-| 1934680 | age_of_mythology_rethold | Age of Mythology Retold |
-| 1244460 | jurassic_world_evolution_dois | Jurassic World Evolution 2 |
-| 2958130 | jurassic_world_evolution_tres | Jurassic World Evolution 3 |
-| 703080 | planet_zoo | Planet Zoo |
-| 3215050 | surviving_mars | Surviving Mars |
-| 1066780 | transport_fever_dois | Transport Fever 2 |
-| 1623730 | palword | Palworld |
-| 1601580 | frostpunk_dois | Frostpunk 2 |
-| 1984270 | digimon_story_time_stranger | Digimon Story |
-| 323190 | frostpunk | Frostpunk |
-| 1125020 | frostpunk_the_rifts | Frostpunk (DLC) |
-| 1146960 | frostpunk_the_last_autumn | Frostpunk (DLC) |
-| 1147010 | frostpunk_on_the_edge | Frostpunk (DLC) |
-| 2791510 | frostpunk_dois_fractured_utopias | Frostpunk 2 (DLC) |
-| 3417870 → 447680 | stellaris_* | Stellaris (DLCs / Packs diversos) |
-| 3778100 → 942190 | x4_* | X4 (DLCs / Packs diversos) |
-| 427100 | fernbus_simulator | Fernbus Simulator |
-| 492720 | tropico_seis | Tropico 6 |
+![qe_te](https://raw.githubusercontent.com/rodrigorocha1234/processamento_distribuido_rss/refs/heads/main/img/diagrama_arq_int.png)
 
 
-## Interpretação do resultado 
+O diagrama de arquitetura e integração mostra a organização da extração de web scraping distribuido que foi construido usando o docker compose.
+
+**Aplicações e portais Web:** Aqui são nossos servicos web como rss_app, que é o motor principal de extração, além de flower,  redis-commander e redisinsight, responsáveis pela visualização e monitoramento das consultas.
+
+**Banco redis:** É o banco responsavel por guardar os dados da extração.
+
+**Processamento Assíncrono:** Aqui, é criado os worker (trabalhos de extração), evitando que cada worker simples, seja sobrecarregado por workers complexos.
+
+**Volume:** Aqui eu persisto os volumes, são os dados de desempenho do pipeline que serão usados para a construção do dashboard no grafana.
+
+
+## Uso do celery
+
+![qe_te](https://raw.githubusercontent.com/rodrigorocha1234/processamento_distribuido_rss/refs/heads/main/img/processo_celery.png)
+
+
+## Workers e Responsabilidades
+
+| Worker                    | Função |
+|---------------------------|---------|
+| `fila_monitoramento` | Monitora o tamanho das filas do sistema. |
+| `fila_alimentar_url_rss` | Responsável por distribuir o processamento de múltiplas URLs RSS. |
+| `fila_processar_url_rss` | Realiza a extração dos elementos do RSS e envia os dados para a fila de buffer. |
+| `ingest_noticia` | Fila de encaminhamento responsável por enviar dados para o processamento da notícia. |
+| `processar_noticia` | Obtém a notícia do G1, gera o arquivo estruturado e salva o resultado no Redis. |
+
+
+## Uso do prometheus e grafana,
+
+Abaixo, foram proposta as métricas que foram calculadas no prometheus e exibida no grafana
+
+### Total de Workers Ativos
+- **Descrição:** Mostra o total de workes ativos  
+- **Fórmula:** `count(celery_active_workers)`
 
 
 
-![qe_te](http://raw.githubusercontent.com/rodrigorocha1/radar_semantico_jogos/refs/heads/master/img/qe_te.png)
+### Latência 95%
+- **Descrição:** Mostra o tempo de latência em 95% da task. Ex: 95% das execuções terminam em até 3.6s.  
+- **Fórmula:** `histogram_quantile( 0.95, sum(rate(celery_task_duration_seconds_bucket{task_name="app.tasks.rss.processar_noticia"}[5m])) by (le) )`
 
 
-O gráfico mostra o comportamento das métricas, erro de quantização e erro topográfico. O erro de quantização mede a distância média entre os dados de entrada e os neurônios vencedores.
-No gráfico, o valor começa perto de 0.47 e apresenta uma queda constante ao logo de 600 épocas estabilizando perto de 0.34, mostrando que a rede está aprendendo  e os pesos dos neurônios estão se ajustando para representar o espaço vetorial dos embedding originais;
-O erro topográfico avalia a preservação da topologia da rede. O resultado fica aproximadamente entre 2% e 5% dos dados ativam bmus que não são adjacentes. Com esses resultados, o mapa conseguiu preservar as relações de vizinhança dos dados,, ou seja, comentários similares, estão em neurônios próximos no mapa.
+
+### Tasks em execução
+- **Descrição:** Mostra o total de tasks que estão ativas para execução.  
+- **Fórmula:** `sum(celery_tasks_active_total)`
 
 
-## Macrotemas
 
-Para a interpretação do mapa auto organizável, eu organizei em seguintes macrotemas:
+### Total de Tasks Processadas
+- **Descrição:** Mostra o total de tasks processadas  
+- **Fórmula:** `sum(celery_tasks_total)`
 
----
 
-### Macrotema 0: Comentários curtos, expressões rápidas e idiomas estrangeiros
 
-Este agrupamento reúne textos curtos, diretos e emocionais. É marcado por girias da internet e o uso de caixa alta.
+### Taxa Média de Crescimento por Segundo no Intervalo
+- **Descrição:** Mostra o tempo total de CPU/execução das tasks está sendo consumido por segundo  
+Ex: A cada 1 segundo, as tasks estão consumindo 0.8 segundos de execução  
+- **Fórmula:** `rate(celery_task_duration_seconds_sum[$__rate_interval])`
 
-**Exemplos:**
 
-- "Very good, even better after the last update."
-- "cometi suicidio 10/10"
-- "Nota mil, coisa linda"
 
----
+### Duração média real da task
+- **Descrição:** Mostra o média  de tasks consumida por segundo. Ex: 5 / 10 = 0.5 segundos por task : Em média, cada task está consumindo 0,5 segundos de tempo de execução  
+- **Fórmula:** `rate(celery_task_duration_seconds_sum[$__rate_interval]) / rate(celery_task_duration_seconds_count[$__rate_interval])`
 
-### Macrotema 1: Reviews Profundos, Análises Técnicas e Relatos Detalhados
 
-Concentra as avaliações e criticas sobre jogos, debate spbre mecanica de jogos (gerenciamento, sobreviência e simulação), discursão sobre pontos positivos e negátivos e discursos sobre dlcs e ótimização.
-
-**Ex:**
-
-- Gostei muito, e de jogar com amigos ainda mais.
-
-- Um DLC que demonstra a Península Ibérica! Portugal pode estar incompleto, mas o esforço está a lá, também sabendo que a escala do mapa é um bocado rigorosa, fica um bocado difícil.  
-Duas cidades serão adicionadas gratuitamente, e acho este ato com muito respeito!  
-Recomendava adicionar a cidade de Lagos, porque tem mais à frente uma rotunda cruzando com a A22 com a N121, que liga para Sines.  
-Do resto, In-cri-vél!
-
-- Já tinha ficado impressionado com o salto de qualidade quando comprei a expansão Scandinavia mas esta... ultrapassa tudo o que já vi neste jogo !  
-São as empresas e cargas novas, é a vegetação mais densa, mais verde, são as áreas de serviço que agora sim são largas e dignas desse nome, é a vasta rede de estradas e auto-estradas (13.500km), as 5 novas conquistas para horas e horas de jogo e o cuidado que tiveram em colocar certos pontos míticos da França no jogo (pena apenas não terem colocado em Paris a Torre Eiffel).  
-
-E que lindas que são as aldeias rústicas com as suas casinhas de pedra !  
-
-Com isto tudo, é caso para dizer: Vive la France !
-
----
-
-### Macrotema 2: Interações com os criadores (Youtube) e Avaliações moderadas
-
-Aqui, os comentários são majoritariamente em português, focados em interações sociais e opiniões diretas, mas sem grandes detalhamentos técnicos. Também reside a grande maioria dos comentários claramente originados do YouTube (ex: conversando com o dono do canal, parabenizando pelo vídeo, discutindo a série) ou avaliações comuns e moderadas ("bom jogo", "recomendo muito").
-
-- Tenho esse eden crafters ainda não joguei ele tenho a bastante tempo parece ser bom
-- Espera-vos muito divertimento
-- Boa tarde Roma
-
-## U-matrix
-
-![u_matrix](https://raw.githubusercontent.com/rodrigorocha1/radar_semantico_jogos/refs/heads/master/img/u_matrix.png)
-
-## Regiões de Comportamento na U-Matrix
-
-Com base na u-matrix, foram separados 3 regiões de comportamento e comentários dos usuários.
-
-### Região 1  
-**(Região superior do mapa, linhas 0-10 e colunas 0-9): Comentários gerais sobre jogos**
-
-É composto por discursão do jogo , comentários são longos e mistrura de opiniões, experiências de gameplay, humor e avaliações detalhadas.
-
----
-
-### Região 2  
-**(Região central esquerda linhas 14 -20 e colunas 1-3): Satistfação e elogiões rápidos**
-
-É composto por feedback positivo simples, contém comentários curtos, foco em aprovação geral e pouca argumentação.
-
----
-
-### Região 3  
-**(Região inferior direita da u-matrix Linhas 21 – 25 e colunas 6 - 9):**
-
-Contém reações emocionais fortes, opiniões extremas, linguagem informal ou impulsiva e mistura de entusiasmo re rejeição
-
-## Hit map 
-![hit_map](https://raw.githubusercontent.com/rodrigorocha1/radar_semantico_jogos/refs/heads/master/img/hit_map.png)
-
-## Detalhamento das Regiões do Mapa
-
-### Região superior do mapa  
-**Faixa:** Linha 0 e Colunas 0 – 10  
-
-Detecção de elementos de gameplay, como evento de expedições e experiências pessoais no jogo, indicando usuários engajados e interesse no conteúdo.
-
----
-
-### Região inferior do mapa  
-**Faixa:** Linha 25 e Colunas 0 – 10  
-
-Detecção de forte engajamento do público, além de detecção de momentos marcantes de uma luta e elementos de sobrevivência.)
-
+## Demostração do projeto
 
 {% include youtube.html 
-   id="BfgtWVOKMDo" 
-   title="Mapa Semântico de Tendências em Games"
+   id="HcWDgNzBjto" 
+   title="Propostra de construção de web scraping  distribuido dos sites do g1."
 %}
 
 
