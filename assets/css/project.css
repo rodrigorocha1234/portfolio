@@ -1,0 +1,235 @@
+/* ==========================================================
+   PROSE-CUSTOM (RENDERIZAÇÃO DE CONTEÚDO MARKDOWN)
+   ========================================================== */
+.prose-custom {
+  color: #cbd5e1;
+  font-size: 16.5px;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+}
+
+/* HEADINGS */
+.prose-custom h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  margin: 32px 0 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.prose-custom h2 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin: 28px 0 12px;
+  border-left: 3px solid #22d3ee;
+  padding-left: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+.prose-custom h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin: 20px 0 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+/* PARAGRAPHS */
+.prose-custom p {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  text-align: justify;
+  margin: 14px 0;
+  color: #cbd5e1;
+}
+
+/* LISTS */
+.prose-custom ul {
+  margin: 14px 0;
+  padding-left: 18px;
+}
+
+.prose-custom ul li {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  text-align: justify;
+  margin: 6px 0;
+  list-style: disc;
+  color: #cbd5e1;
+}
+
+/* CODE BLOCKS & INLINE CODE */
+.prose-custom code {
+  background: rgba(34, 211, 238, 0.08);
+  color: #67e8f9;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.prose-custom pre {
+  background: #0d1f3c;
+  padding: 16px;
+  border-radius: 12px;
+  overflow-x: auto;
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  margin: 18px 0;
+}
+
+/* BLOCKQUOTE */
+.prose-custom blockquote {
+  border-left: 3px solid #22d3ee;
+  padding-left: 14px;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 18px 0;
+}
+
+/* ==========================================================
+   TAGS DE PROJETOS E LEITURA ADICIONAL
+   ========================================================== */
+.project-tag {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 4px 10px;
+  border-radius: 9999px;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.project-tag:hover {
+  background: rgba(34, 211, 238, 0.18);
+  border-color: rgba(34, 211, 238, 0.5);
+  transform: translateY(-1px);
+}
+
+.project-tag-premium {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+
+  padding: 4px 10px;
+  border-radius: 9999px;
+
+  color: #7dd3fc;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+
+  transition: all 0.2s ease;
+}
+
+.project-tag-premium:hover {
+  background: rgba(56, 189, 248, 0.18);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   TABELAS — PREMIUM GLASS THEME
+   ========================================================== */
+.prose-custom table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+
+  font-size: 14.5px;
+  color: var(--text-1);
+
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER STICKY */
+.prose-custom thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  padding: 14px 16px;
+  text-align: left;
+
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  color: var(--accent);
+
+  background: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border-strong);
+}
+
+/* CELLS */
+.prose-custom tbody td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+
+  color: var(--text-1);
+  transition: all 0.2s ease;
+}
+
+/* ZEBRA STRIPING */
+.prose-custom tbody tr:nth-child(even) {
+  background: rgba(15, 30, 60, 0.22);
+}
+
+/* HOVER EM LINHAS */
+.prose-custom tbody tr:hover {
+  background: rgba(56, 189, 248, 0.10);
+  transform: scale(1.002);
+}
+
+/* HOVER EM CÉLULAS */
+.prose-custom tbody td:hover {
+  color: var(--accent-2);
+}
+
+/* DESTAQUE DE PRIMEIRA COLUNA */
+.prose-custom tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-0);
+}
+
+/* BORDAS ARREDONDADAS COMPATIBILIDADE */
+.prose-custom table tr:first-child th:first-child {
+  border-top-left-radius: 14px;
+}
+
+.prose-custom table tr:first-child th:last-child {
+  border-top-right-radius: 14px;
+}
+
+/* RESPONSIVIDADE DE TABELA */
+@media (max-width: 768px) {
+  .prose-custom table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

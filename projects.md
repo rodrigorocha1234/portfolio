@@ -2,6 +2,7 @@
 layout: default
 title: Projetos
 permalink: /projects/
+css: projects.css
 ---
 
 <section class="py-24 px-6 bg-[#0a1628] min-h-screen">

@@ -1,0 +1,27 @@
+/* ==========================================================
+   FILTROS DE TAGS (PÁGINA DE PROJETOS)
+   ========================================================== */
+.filter-tag {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;   /* Medium */
+  padding: 6px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.filter-tag:hover {
+  background: rgba(34, 211, 238, 0.15);
+}
+
+.filter-tag.active {
+  background: #22d3ee;
+  color: #0a1628;
+  border-color: #22d3ee;
+}

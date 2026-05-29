@@ -1,0 +1,96 @@
+/* ==========================================================
+   PROJECT CARDS COMPONENT (projects.html)
+   ========================================================== */
+.project-card {
+  border: 1px solid rgba(56, 189, 248, 0.10);
+  background: rgba(15, 30, 60, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  position: relative;
+
+  /* estado inicial para animação */
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  will-change: transform, opacity;
+
+  /* transições curtas e suaves */
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-card.reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.project-card:hover {
+  transform: translate3d(0, -6px, 0) scale(1.02);
+  border-color: rgba(103, 232, 249, 0.45);
+  background: rgba(18, 43, 80, 0.65);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(103, 232, 249, 0.18),
+    0 0 35px rgba(34, 211, 238, 0.12);
+}
+
+.project-card:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(103, 232, 249, 0.05),
+    transparent 40%,
+    transparent 60%,
+    rgba(125, 211, 252, 0.04)
+  );
+}
+
+.project-card img {
+  height: 210px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.project-hint {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(103, 232, 249, 0.75);
+
+  opacity: 0.7;
+  transition: all 0.25s ease;
+}
+
+.project-arrow {
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover .project-hint {
+  opacity: 1;
+  color: rgba(103, 232, 249, 0.95);
+}
+
+.project-card:hover .project-arrow {
+  transform: translateX(4px);
+}

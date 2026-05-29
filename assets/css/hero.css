@@ -1,0 +1,8 @@
+/* ==========================================================
+   SEÇÃO HERO (hero.html)
+   ========================================================== */
+.hero {
+  background-image: url("/assets/img/header.jpeg");
+  background-size: cover;
+  background-position: center;
+}

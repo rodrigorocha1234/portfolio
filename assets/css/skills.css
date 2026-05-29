@@ -1,0 +1,140 @@
+/* ==========================================================
+   SEÇÃO DE HABILIDADES (skills.html)
+   ========================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 12px;
+  justify-items: center;
+}
+
+@media (max-width: 1280px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+
+  padding-block: 10px;
+  padding-inline: clamp(14px, 1.2ch + 10px, 28px);
+
+  border-radius: 9999px;
+
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  color: #67e8f9;
+  background: rgba(34, 211, 238, 0.08);
+  border: 2px solid rgba(34, 211, 238, 0.25);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.skill-badge:hover {
+  z-index: 20;
+  transform: translateY(-2px);
+
+  background: rgba(34, 211, 238, 0.18);
+  border-color: rgba(34, 211, 238, 0.45);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(34, 211, 238, 0.08);
+}
+
+.skill-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.skills-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 8px 0;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.skills-track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+
+  padding: 6px 0;
+
+  animation: skills-scroll 35s linear infinite;
+}
+
+.skills-marquee:hover .skills-track {
+  animation-play-state: paused;
+}
+
+@keyframes skills-scroll {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-track {
+    gap: 10px;
+    animation-duration: 25s;
+  }
+
+  .skill-badge {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .skill-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-track {
+    animation: none;
+  }
+}
