@@ -213,6 +213,7 @@ Detecção de forte engajamento do público, além de detecção de momentos mar
    title="Mapa Semântico de Tendências em Games"
 %}
 
+[Link do reposítório](https://github.com/rodrigorocha1234/radar_semantico_jogos)
 
 
 
