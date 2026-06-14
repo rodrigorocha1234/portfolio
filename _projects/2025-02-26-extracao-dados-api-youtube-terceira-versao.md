@@ -4,7 +4,7 @@ title: Extração de Dados da API do YouTube com Apache Airflow e Dashboard (Ter
 date: 2025-02-26
 image: /assets/img/posts/extracao_dados_api_youtube_terceira_versao/maxresdefault.png
 description: Este projeto tem como proposta elaborar uma arquitetura para a extração de dados da API do YouTube, desde a coleta até a criação de um dashboard para visualização e análise.
-tags: ['python', 'apache_airflow', 'apache_hive', 'youtube', 'etl', 'docker', 'apache_spark', 'streamlit', 'engenharia de dados']
+tags: ['python', 'apache_airflow', 'apache_hive', 'youtube', 'etl', 'docker', 'apache_spark', 'streamlit', 'engenharia de dados', 'datalake']
 ---
 
 
