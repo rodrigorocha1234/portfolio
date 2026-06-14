@@ -4,7 +4,7 @@ title: "Explorando o Padrão Publish/Subscribe com RabbitMQ: Construindo um Bot 
 date: 2025-08-23
 image: /assets/img/posts/bot_publish_sub/bot.png
 description: "Explorando rabbitmq e padrão Padrão Publish/Subscribe "
-tags: ['python','padrão_de_projeto', rabbitmq]
+tags: ['python','padrão_de_projeto', 'rabbitmq', 'engenharia de dados']
 ---
 
 

@@ -4,7 +4,7 @@ title: "Propostra de construção de web scraping  distribuido dos sites do g1."
 date: 2026-05-27
 image: /assets/img/posts/web_scraping_rss_distribuido/thumb.png
 description: "Construir um web scraping distribuido e monitorar"
-tags: ['python', 'docker', 'beautifulsoup', 'grafana', 'prometheus', 'celery']
+tags: ['python', 'docker', 'beautifulsoup', 'grafana', 'prometheus', 'celery', 'processamento distribuido']
 ---
 ## Objetivo 
 

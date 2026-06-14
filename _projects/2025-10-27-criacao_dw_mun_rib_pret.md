@@ -4,7 +4,7 @@ title: "Criação de um datawarehouse para os municípios da região de Ribeirã
 date: 2025-10-27
 image: /assets/img/posts/datawarehouse_clima_rp/thumb.png
 description: "Amrmazenamento de dados climáticos para a regão de Ribeirão Preto"
-tags: ['python', 'apache_airflow', 'sql_server', 'etl', 'datawarehouse']
+tags: ['python', 'apache_airflow', 'sql_server', 'etl', 'datawarehouse', 'engenharia de dados']
 ---
 
 

@@ -4,7 +4,7 @@ title: Sistema de Emissão de Alertas em Tempo Real da Região de Ribeirão Pret
 date: 2025-02-26
 image: /assets/img/posts/monitoramento_clima/thumb.png
 description: O projeto propõe uma arquitetura em tempo real para a região de Ribeirão Preto, utilizando uma API e exibindo os dados em um dashboard.
-tags: ['python', 'apache_kafka', 'streamlit']
+tags: ['python', 'apache_kafka', 'streamlit', 'engenharia de dados']
 ---
 
 

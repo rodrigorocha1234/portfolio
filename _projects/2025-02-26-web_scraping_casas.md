@@ -4,7 +4,7 @@ title: "Web Scraping do Site Viva Real"
 date: 2025-02-26
 image: /assets/img/posts/web_scraping_casas/thumb.png
 description: "Este projeto tem como objetivo construir um web scraping usando selenium para extrair informações do site Viva Real (https://www.vivareal.com.br/) e salvá-las em um arquivo `.xlsx`."
-tags: ['python', 'webscraping', 'google', 'planilhas', 'selenium']
+tags: ['python', 'webscraping', 'google', 'planilhas', 'selenium', 'viva real']
 ---
 
 

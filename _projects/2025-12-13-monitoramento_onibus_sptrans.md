@@ -4,7 +4,7 @@ title: "Monitoramento das posições dos ônibus em tempo real"
 date: 2025-12-13
 image: /assets/img/posts/monitoramento_onibus_sptrans_kafka/thumb.png
 description:  "Neste projeto, desenvolvi um sistema de monitoramento em tempo real das posições de ônibus , usando a API da sptrans."
-tags: ['python', 'nosql', 'rabbitmq']
+tags: ['python', 'nosql', 'rabbitmq', 'engenharia de dados']
 ---
 
 ## Introdução 

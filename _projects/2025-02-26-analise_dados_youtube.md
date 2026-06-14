@@ -4,7 +4,7 @@ title: Construção de um dashboard com os dados da API do youtube
 date: 2025-02-26
 image: /assets/img/posts/analise_dados_youtube/thumb.png
 description: Este projeto tem como a proposta de elaborar uma arquitetura de extração da API do youtube até a elaboração do dashboard.
-tags: ['python', 'apache_airflow', 'apache_hive', 'youtube', 'etl', 'apache_spark', 'streamlit']
+tags: ['python', 'apache_airflow', 'apache_hive', 'youtube', 'etl', 'apache_spark', 'streamlit', 'engenharia de dados']
 ---
 
 
