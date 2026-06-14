@@ -4,7 +4,7 @@ title: "Proposta de construção de um datalake com os dados da API do youtube"
 date: 2025-06-19
 image: /assets/img/posts/analise_dados_youtube/thumb.png
 description: "O projeto visa propor uma estrutura de um datalake e organizar uma coleta dos dados da api do youtube e estruturar um datalake para futuras analises em um dashboard."
-tags: ['python', 'apache_airflow', 'apache_hive', 'youtube', 'etl', 'datalake', 'dbt', 'engenharia de dados']
+tags: ['python', 'apache_airflow', 'apache_hive', 'youtube', 'etl', 'datalake', 'dbt', 'engenharia de dados', 'datalake']
 ---
 
 
