@@ -4,7 +4,7 @@ title: "Web Scraping de Notícias do G1 com Scrapy"
 date: 2025-02-27
 image: /assets/img/posts/scrapy_noticias_globo/thumb.png
 description:  Este projeto tem como objetivo a construção de um web scraping utilizando o Scrapy para extrair informações do site rss G1 e salvar os dados em um arquivo XLSX."
-tags: ['python', 'webscraping', 'g1 rss']
+tags: ['python', 'webscraping', 'g1', 'rss']
 ---
 
 
