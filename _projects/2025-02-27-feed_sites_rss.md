@@ -4,7 +4,7 @@ title: "Projeto: Construção de um Feed de Site de Notícias usando Beautiful S
 date: 2025-02-27
 image: /assets/img/posts/feed_sites_rss/thumb.png
 description:  "A proposta deste projeto é demonstrar o conhecimento nas bibliotecas utilizadas para a extração de dados de sites e a criação de um feed dinâmico para exibição em uma aplicação Streamlit."
-tags: ['python', 'beautifulsoup', 'streamlit', 'webscraping', 'g1 rss']
+tags: ['python', 'beautifulsoup', 'streamlit', 'webscraping', 'g1', 'rss']
 ---
 
 
