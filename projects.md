@@ -16,14 +16,7 @@ css: projects.css
     <!-- TAG FILTERS -->
     <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-2 mb-12">
 
-      {% assign all_tags = site.projects
-        | map: "tags"
-        | join: ","
-        | split: ","
-        | map: "strip"
-        | uniq
-        | sort
-      %}
+      {% assign all_tags = site.projects | map: "tags" | join: "," | split: "," | uniq | sort %}
 
       {% for tag in all_tags %}
         <button
