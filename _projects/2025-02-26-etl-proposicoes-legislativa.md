@@ -4,7 +4,7 @@ title: Projeto ETL com Apache Airflow usando a API de Dados Abertos da Assemblei
 date: 2025-02-26
 image: /assets/img/posts/etl_proposicoes_legislativa/thumb.png
 description: Este projeto tem como objetivo propor uma estrutura de ETL usando Python e Apache Airflow.
-tags: ['python', 'apache_airflow', 'sql_server', 'etl', 'datawarewouse', 'engenharia de dados']
+tags: ['python', 'apache_airflow', 'sql_server', 'etl', 'datawarehouse', 'engenharia de dados']
 ---
 
 
